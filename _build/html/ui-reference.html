@@ -1,0 +1,358 @@
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" >
+<head>
+  <meta charset="utf-8" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Authentication &mdash; Netmaker 0.24.3 documentation</title>
+      <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+      <link rel="stylesheet" href="_static/css/theme.css" type="text/css" />
+      <link rel="stylesheet" href="_static/custom.css" type="text/css" />
+      <link rel="stylesheet" href="_static/fonts.css" type="text/css" />
+  <!--[if lt IE 9]>
+    <script src="_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+        <script data-url_root="./" id="documentation_options" src="_static/documentation_options.js"></script>
+        <script src="_static/jquery.js"></script>
+        <script src="_static/underscore.js"></script>
+        <script src="_static/doctools.js"></script>
+    <script src="_static/js/theme.js"></script>
+    <link rel="author" title="About these documents" href="about.html" />
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+    <link rel="next" title="API Usage" href="api.html" />
+    <link rel="prev" title="References" href="references.html" /> 
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+
+          
+          
+          <a href="index.html" class="icon icon-home">
+            Netmaker
+          </a>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" aria-label="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="about.html">About</a></li>
+<li class="toctree-l1"><a class="reference internal" href="getting-started.html">Getting Started</a></li>
+<li class="toctree-l1"><a class="reference internal" href="features.html">Features</a></li>
+<li class="toctree-l1"><a class="reference internal" href="pro/index.html">Netmaker Professional</a></li>
+<li class="toctree-l1"><a class="reference internal" href="upgrades.html">Upgrades</a></li>
+<li class="toctree-l1"><a class="reference internal" href="how-to-guides.html">How-to-Guides</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="references.html">References</a><ul class="current">
+<li class="toctree-l2 current"><a class="reference internal" href="references.html#ui">UI</a><ul class="current">
+<li class="toctree-l3 current"><a class="current reference internal" href="#">Authentication</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#signup">Signup</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#login">Login</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="#dashboard">Dashboard</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#networks">Networks</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#create">Create</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="#hosts">Hosts</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#host-list">Host List</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#host-create">Host Create</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#host-details">Host Details</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="#nodes">Nodes</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#node-list">Node List</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#create-egress">Create Egress</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#create-relay">Create Relay</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#edit-node-node-details">Edit Node / Node Details</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="#remote-access">Remote Access</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#dns">DNS</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#create-edit-users">Create / Edit Users</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#node-graph">Node Graph</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#access-control-lists">Access Control Lists</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="references.html#api">API</a></li>
+<li class="toctree-l2"><a class="reference internal" href="references.html#netclient">Netclient</a></li>
+<li class="toctree-l2"><a class="reference internal" href="references.html#nmctl">NMCTL</a></li>
+<li class="toctree-l2"><a class="reference internal" href="references.html#faq">FAQ</a></li>
+<li class="toctree-l2"><a class="reference internal" href="references.html#troubleshooting">Troubleshooting</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="license.html">License</a></li>
+<li class="toctree-l1"><a class="reference internal" href="conduct.html">Code of Conduct</a></li>
+</ul>
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="index.html">Netmaker</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="index.html" class="icon icon-home" aria-label="Home"></a></li>
+          <li class="breadcrumb-item"><a href="references.html">References</a></li>
+      <li class="breadcrumb-item active">Authentication</li>
+      <li class="wy-breadcrumbs-aside">
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  <p>This page contains annotated screenshots of most UI components, detailing the configuration options of each field across Nodes, Networks, DNS, Ext Clients, Users, and more.</p>
+<p><a class="reference external" href="https://app.arcade.software/share/Jdl7PnnqIbot3IkqvIaf">Here is an arcade showing a walkthrough of our new UI.</a></p>
+<section id="authentication">
+<h1>Authentication<a class="headerlink" href="#authentication" title="Permalink to this headline"></a></h1>
+<section id="signup">
+<h2>Signup<a class="headerlink" href="#signup" title="Permalink to this headline"></a></h2>
+<p>When you start Netmaker for the first time, you will be prompted to create a superadmin account from the UI like below</p>
+<a class="reference internal image-reference" href="_images/ui-signup.png"><img alt="sign up" class="align-center" src="_images/ui-signup.png" style="width: 80%;" /></a>
+<ol class="arabic simple">
+<li><p><strong>Username:</strong> Enter a unique username for the admin user.</p></li>
+<li><p><strong>Password:</strong> Enter a secure password for your new user.</p></li>
+<li><p><strong>Password Confirmation:</strong> Repeat the password for verification.</p></li>
+<li><p><strong>Signup with OAuth:</strong> Button to signup with OAuth. From v0.23.1, OAuth users will need further approval from a server admin to gain access.</p></li>
+</ol>
+</section>
+<section id="login">
+<h2>Login<a class="headerlink" href="#login" title="Permalink to this headline"></a></h2>
+<a class="reference internal image-reference" href="_images/ui-login.png"><img alt="log in" class="align-center" src="_images/ui-login.png" style="width: 80%;" /></a>
+<ol class="arabic simple">
+<li><p><strong>Username:</strong> Enter your username.</p></li>
+<li><p><strong>Password:</strong> Enter your password.</p></li>
+<li><p><strong>Login:</strong> Button to login.</p></li>
+<li><p><strong>Login with OAuth:</strong> Button to login with OAuth.</p></li>
+</ol>
+</section>
+</section>
+<section id="dashboard">
+<h1>Dashboard<a class="headerlink" href="#dashboard" title="Permalink to this headline"></a></h1>
+<a class="reference internal image-reference" href="_images/ui-1.jpg"><img alt="dashboard" class="align-center" src="_images/ui-1.jpg" style="width: 80%;" /></a>
+</section>
+<section id="networks">
+<h1>Networks<a class="headerlink" href="#networks" title="Permalink to this headline"></a></h1>
+<section id="create">
+<h2>Create<a class="headerlink" href="#create" title="Permalink to this headline"></a></h2>
+<a class="reference internal image-reference" href="_images/ui-2.png"><img alt="create network" class="align-center" src="_images/ui-2.png" style="width: 80%;" /></a>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>
+</pre></div>
+</div>
+<ol class="arabic simple">
+<li><p><strong>Autofill:</strong> Provides sensible defaults for network details and makes up a name.</p></li>
+<li><p><strong>Network Name:</strong> The name of the network. Character limited, as this translates to the interface name on hosts (nm-&lt;network name&gt;)</p></li>
+<li><p><strong>Address Range:</strong> The CIDR of the network. Must be a valid IPv4 Subnet and should be a private address range.</p></li>
+<li><p><strong>Default Access Control:</strong> Indicates the default ACL value for a node when it joins in respect to it’s peers (enabled or disabled).</p></li>
+</ol>
+</section>
+</section>
+<section id="hosts">
+<h1>Hosts<a class="headerlink" href="#hosts" title="Permalink to this headline"></a></h1>
+<p>In simple terms, a host is a computer or machine running the netclient software. Netmaker UI allows an admin to conviniently view and configure some host settings remotely.</p>
+<section id="host-list">
+<h2>Host List<a class="headerlink" href="#host-list" title="Permalink to this headline"></a></h2>
+<a class="reference internal image-reference" href="_images/hosts-list.png"><img alt="hosts list" class="align-center" src="_images/hosts-list.png" style="width: 80%;" /></a>
+<ol class="arabic simple">
+<li><p><strong>Host Name:</strong> Friendly name of the host. Clicking it opens a view to allow admins manage hosts.</p></li>
+<li><p><strong>Endpoint:</strong> The public IP address of the host.</p></li>
+<li><p><strong>Public Port:</strong> Public port of the host.</p></li>
+<li><p><strong>Version:</strong> Indicates the version of netclient the host is running.</p></li>
+<li><p><strong>Health Status:</strong> Indicates the connectivity of the host.</p></li>
+<li><p><strong>Sync:</strong> Synchronise the host with the server; this triggers the host to pull latest network/server state.</p></li>
+<li><p><strong>Actions:</strong> Quick actions that can be performed on the host.</p></li>
+</ol>
+</section>
+<section id="host-create">
+<h2>Host Create<a class="headerlink" href="#host-create" title="Permalink to this headline"></a></h2>
+<p>A host is automatically created on a server once a netclient (a machine running netclient) joins any network on the server.</p>
+</section>
+<section id="host-details">
+<h2>Host Details<a class="headerlink" href="#host-details" title="Permalink to this headline"></a></h2>
+<a class="reference internal image-reference" href="_images/host-details.png"><img alt="host details" class="align-center" src="_images/host-details.png" style="width: 80%;" /></a>
+<p>The following information is present under the host details tab:</p>
+<ol class="arabic simple">
+<li><p><strong>ID:</strong> Unique identifier for the host</p></li>
+<li><p><strong>Name:</strong> Name of the host. Defaults to the machine’s name.</p></li>
+<li><p><strong>Version:</strong> Version of netclient the host is running.</p></li>
+<li><p><strong>Operating System:</strong> Operating system (OS) the machine is running.</p></li>
+<li><p><strong>Public Key:</strong> Public key of the host. distributed to other hosts.</p></li>
+<li><p><strong>MTU:</strong> Maximum Transmission Unit (MTU) of the host</p></li>
+<li><p><strong>Listen Port:</strong> The wiregaurd listen port.</p></li>
+<li><p><strong>Proxy Listen Port:</strong> The netclient proxy listen port. this is used if <cite>Proxy Enabled</cite> is set to <cite>true</cite>. (No longer available from v0.20.5)</p></li>
+<li><p><strong>Verbosity:</strong> Log verbosity (ranges from 1-4). Indicates level of detail the host (netclient) will output to logs.</p></li>
+<li><p><strong>Default Interface:</strong> Default network interface used by the host.</p></li>
+<li><p><strong>MAC Address:</strong> Media Access Control (MAC) address of the host machine.</p></li>
+<li><p><strong>Is Default:</strong> Indicates whether the host is a default node. Hosts that are default nodes will automatically join any created network.</p></li>
+<li><p><strong>Debug:</strong> Flag to enable additional logging on client.</p></li>
+<li><p><strong>Proxy Enabled:</strong> Indicates whether a host is running netclient proxy. (No longer available from v0.20.5)</p></li>
+<li><p><strong>Is Static:</strong> Indicaates whether the host’s endpoint is static or not.</p></li>
+<li><p><strong>Interfaces:</strong> Lists the available network interface for the host.</p></li>
+</ol>
+<p>A host can be deleted from the UI. All associated nodes must be manually removed however, before deleting a host.</p>
+<a class="reference internal image-reference" href="_images/host-nets.png"><img alt="host details" class="align-center" src="_images/host-nets.png" style="width: 80%;" /></a>
+</section>
+</section>
+<section id="nodes">
+<h1>Nodes<a class="headerlink" href="#nodes" title="Permalink to this headline"></a></h1>
+<section id="node-list">
+<h2>Node List<a class="headerlink" href="#node-list" title="Permalink to this headline"></a></h2>
+<a class="reference internal image-reference" href="_images/nodes-1.png"><img alt="nodes list" class="align-center" src="_images/nodes-1.png" style="width: 80%;" /></a>
+<ol class="arabic simple">
+<li><p><strong>Search Hosts:</strong> Look up a host by name.</p></li>
+<li><p><strong>Host Name:</strong> Name of host. By default set to hostname of machine.</p></li>
+<li><p><strong>Private Addresses:</strong> Private IPs of host within network.</p></li>
+<li><p><strong>Public Address:</strong> Public IP of host.</p></li>
+<li><p><strong>Status:</strong> Indicates how recently the host checked into the server. Displays “Warning” after 5 minutes and “Error” after 30 minutes without a check in. Does <strong>not</strong> explicitly indicate the health of the node’s virtual network connections; however a healthy host will check-in regularly.</p></li>
+<li><p><strong>Actions:</strong> Dropdown list of actions that can be performed on a host, including disconnecting and deleting the host.</p></li>
+</ol>
+<p>A node pending deletion will be grayed out.</p>
+</section>
+<section id="create-egress">
+<h2>Create Egress<a class="headerlink" href="#create-egress" title="Permalink to this headline"></a></h2>
+<a class="reference internal image-reference" href="_images/ui-6.png"><img alt="dashboard" class="align-center" src="_images/ui-6.png" style="width: 80%;" /></a>
+<ol class="arabic simple">
+<li><p><strong>Egress Gateway Ranges:</strong> A comma-separated list of the subnets for which the gateway will route traffic. For instance, with Kubernetes this could be both the Service Network and Pod Network. For a standard VPN, Netmaker can use a list of the public CIDR’s (see the docs). Typically, this will be something like a data center network, VPC, or home network.</p></li>
+<li><p><strong>Interface:</strong> The interface on the machine used to access the provided egress gateway ranges. For instance, on a typical linux machine, the interface for public traffic would be “eth0”. Usually you will need to check on the machine first to find the right interface. For instance, on Linux, you can find the interface by running this: ip route get &lt;address in subnet&gt;.</p></li>
+</ol>
+</section>
+<section id="create-relay">
+<h2>Create Relay<a class="headerlink" href="#create-relay" title="Permalink to this headline"></a></h2>
+<p>Check host section on <a class="reference internal" href="#hosts">hosts</a>. A relay can be created under host settings.</p>
+</section>
+<section id="edit-node-node-details">
+<h2>Edit Node / Node Details<a class="headerlink" href="#edit-node-node-details" title="Permalink to this headline"></a></h2>
+<a class="reference internal image-reference" href="_images/ui-5.jpg"><img alt="dashboard" class="align-center" src="_images/ui-5.jpg" style="width: 80%;" /></a>
+<a class="reference internal image-reference" href="_images/ui-5-5.png"><img alt="dashboard" class="align-center" src="_images/ui-5-5.png" style="width: 80%;" /></a>
+<ol class="arabic simple">
+<li><p><strong>Edit</strong> Edit the node’s details</p></li>
+<li><p><strong>ACLs</strong> View the node’s Access Control List (ACL)</p></li>
+<li><p><strong>Metrics</strong> View the node’s metrics</p></li>
+<li><p><strong>Host</strong> View the node’s associated host</p></li>
+<li><p><strong>Delete</strong> Delete the node</p></li>
+<li><p><strong>Endpoint:</strong> The (typically public) IP of the machine, which peers will use to reach it, in combination with the port. If changing this value, make sure Roaming is turned off, since otherwise, the node will check to see if there is a change in the public IP regularly and update it.</p></li>
+<li><p><strong>Dynamic Endpoint:</strong> The endpoint may be changed automatically. Switching this off (indicating static endpoint) means the endpoint will stay the same until you change it. This can be good to set if the machine is a server sitting in a location that is not expected to change. It is also good to have this switched off for Remote Access gateway, Egress, and Relay Servers, since they should be in a reliable location.</p></li>
+<li><p><strong>Listen Port:</strong> The port used by the node locally. <strong>This value is ignored if UDP Hole Punching is on,</strong> because port is set dynamically every time interface is created. If UDP Hole Punching is off, the port can be set to any reasonable (and available) value you’d like for the local machine.</p></li>
+<li><p><strong>IP Address:</strong> The primary private IP address of the node. Assigned automatically by Netmaker but can be changed to whatever you want within the Network CIDR.</p></li>
+<li><p><strong>IPv6 Address:</strong> (Only if running dual stack) the primary private IPv6 address of the node. Assigned automatically by Netmaker but can be changed to whatever you want within the Network CIDR.</p></li>
+<li><p><strong>Local Address:</strong> The “locally reachable” address of the node. Other nodes will take note of this to see if this node is on the same network. If so, they will use this address instead of the public “Endpoint.” If running a few nodes inside of a VPC, home network, or similar, make sure the local address is populated correctly for faster and more secure inter-node communication.</p></li>
+<li><p><strong>Node Name:</strong> The name of the node within the network. Hostname by default but can be anything (within the character limits).</p></li>
+<li><p><strong>Public Key:</strong> (Uneditable) The public key of the node, distributed to other peers in the network.</p></li>
+<li><p><strong>Persistent Keepalive:</strong> How often packets are sent to keep connections open with other peers.</p></li>
+<li><p><strong>Last Modified:</strong> Timestamp of the last time the node config was changed.</p></li>
+<li><p><strong>Node Expiration Datetime:</strong> If a node should become invalid after a length of time, you can set it in this field, after which time, it will lose access to the network and will not populate to other nodes. Useful for scenarios where temporary access is granted to 3rd parties.</p></li>
+<li><p><strong>Last Checkin:</strong> Unix timestamp of the last time the node checked in with the server. Used to determine generic health of node.</p></li>
+<li><p><strong>MAC Address:</strong> The hardware Media Access Control (MAC) address of the machine. Used to be used as the unique ID, but is being depreciated.</p></li>
+<li><p><strong>Egress Gateway Ranges:</strong> If Egress is enabled, the gateway ranges that this machine routes to.</p></li>
+<li><p><strong>Local Range:</strong> If IsLocal has been enabled on the network, this is the local range in which the node will look for a private address from it’s local interfaces, to use as an endpoint.</p></li>
+<li><p><strong>Node Operating System:</strong> The OS of the machine.</p></li>
+<li><p><strong>MTU:</strong> The MTU that the node will use on the interface. If “wg show” displays a valid handshake but pings are not working, many times the issue is MTU. Making this value lower can solve this issue. Some typical values are 1024, 1280, and 1420.</p></li>
+<li><p><strong>Network:</strong> The network this node belongs to.</p></li>
+<li><p><strong>Node ACL Rule</strong> The current ACL rule for this node in the network</p></li>
+<li><p><strong>Is DNS On:</strong> DNS is solely handled by resolvectl at the moment, which is on many Linux distributions. For anything else, this value should remain off. If you wish to configure DNS for non-compatible systems, you must do so manually.</p></li>
+<li><p><strong>Is Local:</strong> If on, will only communicate over the local address (Assumes IsLocal tuned to ‘yes’ on the network level.)</p></li>
+<li><p><strong>Connected</strong> Indicates whether the node has is connected to the network</p></li>
+</ol>
+</section>
+</section>
+<section id="remote-access">
+<h1>Remote Access<a class="headerlink" href="#remote-access" title="Permalink to this headline"></a></h1>
+<a class="reference internal image-reference" href="_images/ui-8.jpg"><img alt="dashboard" class="align-center" src="_images/ui-8.jpg" style="width: 80%;" /></a>
+<ol class="arabic simple">
+<li><p><strong>Gateway Name / IP Address:</strong> Information about which Node is the Remote Access Gateway.</p></li>
+<li><p><strong>Add Client Config:</strong> Button to generate a new Remote Access Client configuration file.</p></li>
+<li><p><strong>Client ID:</strong> The randomly-generated name of the client. Click on the ID to change the name to something sensible.</p></li>
+<li><p><strong>IP Address:</strong> The private ip address of the ext client.</p></li>
+<li><p><strong>QR Code:</strong> If joining form iOS or Android, open the WireGuard app and scan the QR code to join the network.</p></li>
+<li><p><strong>Download Client Configuration:</strong> If joining from a laptop/desktop, download the config file and run “wg-quick up /path/to/config”</p></li>
+<li><p><strong>Delete:</strong> Delete the ext client and remove its network access.</p></li>
+</ol>
+</section>
+<section id="dns">
+<h1>DNS<a class="headerlink" href="#dns" title="Permalink to this headline"></a></h1>
+<a class="reference internal image-reference" href="_images/ui-10.jpg"><img alt="dashboard" class="align-center" src="_images/ui-10.jpg" style="width: 80%;" /></a>
+<ol class="arabic simple">
+<li><p><strong>DNS Name:</strong> The private DNS entry. Must end in “.&lt;network name&gt;” (added automatically). This avoids conflicts between networks.</p></li>
+<li><p><strong>IP Address:</strong> The IP address of the entry. Can be anything (public addresses too!) but typically a node IP.</p></li>
+<li><p><strong>Select Node Address:</strong> Select a node name to populate its IP address automatically.</p></li>
+</ol>
+</section>
+<section id="create-edit-users">
+<h1>Create / Edit Users<a class="headerlink" href="#create-edit-users" title="Permalink to this headline"></a></h1>
+<a class="reference internal image-reference" href="_images/ui-11.jpg"><img alt="dashboard" class="align-center" src="_images/ui-11.jpg" style="width: 80%;" /></a>
+<ol class="arabic simple">
+<li><p><strong>Username:</strong> Specify Username.</p></li>
+<li><p><strong>Password:</strong> Specify password.</p></li>
+<li><p><strong>Confirm Password:</strong> Confirm password.</p></li>
+<li><p><strong>Make Admin:</strong> Make into a server admin or “super admin”, which has access to all networks and server-level settings.</p></li>
+<li><p><strong>Networks:</strong> If not made into an “admin”, select the networks which this user has access to. The user will be a “network admin” of these networks, but other networks will be invisible/unaccessible.</p></li>
+</ol>
+</section>
+<section id="node-graph">
+<h1>Node Graph<a class="headerlink" href="#node-graph" title="Permalink to this headline"></a></h1>
+<a class="reference internal image-reference" href="_images/node-graph-1.png"><img alt="dashboard" class="align-center" src="_images/node-graph-1.png" style="width: 80%;" /></a>
+<p>View all nodes in your network, zoom in, zoom out, and search for node names.
+<strong>hover:</strong> Hover over a node to see its direct connections.</p>
+</section>
+<section id="access-control-lists">
+<h1>Access Control Lists<a class="headerlink" href="#access-control-lists" title="Permalink to this headline"></a></h1>
+<a class="reference internal image-reference" href="_images/acls-3.png"><img alt="ACLs" class="align-center" src="_images/acls-3.png" style="width: 80%;" /></a>
+<ol class="arabic simple">
+<li><p><strong>Reset:</strong> Reset your changes without submitting.</p></li>
+<li><p><strong>Allow All:</strong> Enable all p2p connections</p></li>
+<li><p><strong>Block All:</strong> Disable all p2p connections. Makes building up a Zero Trust network easier.</p></li>
+<li><p><strong>(allowed):</strong> Click to switch a connection to “deny.” Note that node names are higlighted on the side and top to track location.</p></li>
+<li><p><strong>(blocked):</strong> Click to switch a connection to “allow.”</p></li>
+<li><p><strong>Submit Changes:</strong> Click once you are ready to submit. Will send message to update relevant nodes in network.</p></li>
+</ol>
+</section>
+
+
+           </div>
+          </div>
+          <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
+        <a href="references.html" class="btn btn-neutral float-left" title="References" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+        <a href="api.html" class="btn btn-neutral float-right" title="API Usage" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>&#169; Copyright 2024, Netmaker Inc..</p>
+  </div>
+
+  Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    provided by <a href="https://readthedocs.org">Read the Docs</a>.
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>

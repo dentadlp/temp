@@ -1,0 +1,187 @@
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" >
+<head>
+  <meta charset="utf-8" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Integrating OAuth &mdash; Netmaker 0.24.3 documentation</title>
+      <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+      <link rel="stylesheet" href="_static/css/theme.css" type="text/css" />
+      <link rel="stylesheet" href="_static/custom.css" type="text/css" />
+      <link rel="stylesheet" href="_static/fonts.css" type="text/css" />
+  <!--[if lt IE 9]>
+    <script src="_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+        <script data-url_root="./" id="documentation_options" src="_static/documentation_options.js"></script>
+        <script src="_static/jquery.js"></script>
+        <script src="_static/underscore.js"></script>
+        <script src="_static/doctools.js"></script>
+    <script src="_static/js/theme.js"></script>
+    <link rel="author" title="About these documents" href="about.html" />
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+    <link rel="next" title="Relay Servers" href="pro/pro-relay-server.html" />
+    <link rel="prev" title="Users in Netmaker Professional" href="pro/pro-users.html" /> 
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+
+          
+          
+          <a href="index.html" class="icon icon-home">
+            Netmaker
+          </a>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" aria-label="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="about.html">About</a></li>
+<li class="toctree-l1"><a class="reference internal" href="getting-started.html">Getting Started</a></li>
+<li class="toctree-l1"><a class="reference internal" href="features.html">Features</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="pro/index.html">Netmaker Professional</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="pro/pro-setup.html">Netmaker Professional Setup</a></li>
+<li class="toctree-l2"><a class="reference internal" href="pro/pro-users.html">Users in Netmaker Professional</a></li>
+<li class="toctree-l2 current"><a class="current reference internal" href="#">Integrating OAuth</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#introduction">Introduction</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#configuring-your-provider">Configuring your provider</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#configuring-netmaker">Configuring Netmaker</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#oauth-users">Oauth Users</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="pro/pro-relay-server.html">Relay Servers</a></li>
+<li class="toctree-l2"><a class="reference internal" href="pro/pro-metrics.html">Netmaker Professional Metrics</a></li>
+<li class="toctree-l2"><a class="reference internal" href="pro/pro-branding.html">UI Branding</a></li>
+<li class="toctree-l2"><a class="reference internal" href="pro/rac.html">Netmaker Remote Access Client (RAC)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="pro/pro-failovers.html">FailOver Servers</a></li>
+<li class="toctree-l2"><a class="reference internal" href="pro/internet-gateways.html">Internet Gateways</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="upgrades.html">Upgrades</a></li>
+<li class="toctree-l1"><a class="reference internal" href="how-to-guides.html">How-to-Guides</a></li>
+<li class="toctree-l1"><a class="reference internal" href="references.html">References</a></li>
+<li class="toctree-l1"><a class="reference internal" href="license.html">License</a></li>
+<li class="toctree-l1"><a class="reference internal" href="conduct.html">Code of Conduct</a></li>
+</ul>
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="index.html">Netmaker</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="index.html" class="icon icon-home" aria-label="Home"></a></li>
+          <li class="breadcrumb-item"><a href="features.html">Features</a></li>
+          <li class="breadcrumb-item"><a href="pro/index.html">Netmaker Professional</a></li>
+      <li class="breadcrumb-item active">Integrating OAuth</li>
+      <li class="wy-breadcrumbs-aside">
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  <section id="integrating-oauth">
+<h1>Integrating OAuth<a class="headerlink" href="#integrating-oauth" title="Permalink to this headline"></a></h1>
+<section id="introduction">
+<h2>Introduction<a class="headerlink" href="#introduction" title="Permalink to this headline"></a></h2>
+<p>As of v0.14.5, Netmaker offers integration with the following OAuth providers:</p>
+<ul class="simple">
+<li><p>GitHub</p></li>
+<li><p>Google</p></li>
+<li><p>Microsoft Azure AD</p></li>
+<li><p>Open ID Connect (OIDC)</p></li>
+</ul>
+<p>By integrating with an OAuth provider, your Netmaker users can log in via the provider, rather than the default simple auth.</p>
+</section>
+<section id="configuring-your-provider">
+<h2>Configuring your provider<a class="headerlink" href="#configuring-your-provider" title="Permalink to this headline"></a></h2>
+<p>In order to use OAuth, configure your OAuth provider (GitHub, Google, Azure AD).</p>
+<p>You must configure your provider (except for Azure AD) to use the Netmaker Dashboard URI: dashboard.&lt;netmaker.base.domain&gt; as the origin URL.</p>
+<p>For example: <cite>https://dashboard.netmaker.mydomain.com</cite></p>
+<p>You must configure your provider to use the Netmaker API URI redirect route with the following format: api.&lt;netmaker base domain&gt;/api/oauth/callback</p>
+<p>For example: <cite>https://api.netmaker.mydomain.com/api/oauth/callback</cite></p>
+<p>General provider instructions can be found with the following links:</p>
+<p>Instructions for GitHub: <a class="reference external" href="https://oauth2-proxy.github.io/oauth2-proxy/docs/configuration/oauth_provider/#github-auth-provider">https://oauth2-proxy.github.io/oauth2-proxy/docs/configuration/oauth_provider/#github-auth-provider</a>
+Instructions for Google: <a class="reference external" href="https://oauth2-proxy.github.io/oauth2-proxy/docs/configuration/oauth_provider/#google-auth-provider">https://oauth2-proxy.github.io/oauth2-proxy/docs/configuration/oauth_provider/#google-auth-provider</a>
+Instructions for Microsoft Azure AD: <a class="reference external" href="https://oauth2-proxy.github.io/oauth2-proxy/docs/configuration/oauth_provider/#microsoft-azure-ad-provider">https://oauth2-proxy.github.io/oauth2-proxy/docs/configuration/oauth_provider/#microsoft-azure-ad-provider</a>
+Instructions for OIDC: <a class="reference external" href="https://oauth2-proxy.github.io/oauth2-proxy/docs/configuration/oauth_provider/#openid-connect-provider">https://oauth2-proxy.github.io/oauth2-proxy/docs/configuration/oauth_provider/#openid-connect-provider</a></p>
+</section>
+<section id="configuring-netmaker">
+<h2>Configuring Netmaker<a class="headerlink" href="#configuring-netmaker" title="Permalink to this headline"></a></h2>
+<p>After you have configured your OAuth provider, take note of the CLIENT_ID and CLIENT_SECRET. If you are using Azure for oauth, you may also want to note down the Azure tenant ID you wish to use.</p>
+<p>Next, Configure Netmaker with the following environment variables. If any are left blank, OAuth will fail.</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">AUTH_PROVIDER</span><span class="p">:</span> <span class="s2">&quot;&lt;azure-ad|github|google|oidc&gt;&quot;</span>
+<span class="n">CLIENT_ID</span><span class="p">:</span> <span class="s2">&quot;&lt;client id of your oauth provider&gt;&quot;</span>
+<span class="n">CLIENT_SECRET</span><span class="p">:</span> <span class="s2">&quot;&lt;client secret of your oauth provider&gt;&quot;</span>
+<span class="n">SERVER_HTTP_HOST</span><span class="p">:</span> <span class="s2">&quot;api.&lt;netmaker base domain&gt;&quot;</span>
+<span class="n">FRONTEND_URL</span><span class="p">:</span> <span class="s2">&quot;https://dashboard.&lt;netmaker base domain&gt;&quot;</span>
+<span class="n">AZURE_TENANT</span><span class="p">:</span> <span class="s2">&quot;&lt;only for azure, you may optionally specify the tenant for the OAuth&gt;&quot;</span>
+<span class="n">OIDC_ISSUER</span><span class="p">:</span> <span class="s2">&quot;&lt;only for oidc, your issuer endpoint for OIDC&gt; ie. http://127.0.0.1:5556/dex&quot;</span>
+</pre></div>
+</div>
+<p>After restarting your server, the Netmaker logs will indicate if the OAuth provider was successfully initialized:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">sudo</span> <span class="n">docker</span> <span class="n">logs</span> <span class="n">netmaker</span>
+</pre></div>
+</div>
+<p>Once successful, users can click on the “Login with SSO” button in the login page to sign-in with your configured OAuth provider.</p>
+<img alt="Login Oauth" class="align-center" src="_images/oauth1.jpg" />
+</section>
+<section id="oauth-users">
+<h2>Oauth Users<a class="headerlink" href="#oauth-users" title="Permalink to this headline"></a></h2>
+<p>Users are also allowed to join a Netmaker server via OAuth. They can do this by clicking the “Login with SSO” button on the dashboard’s login page.</p>
+<a class="reference internal image-reference" href="_images/user-mgmt-pending.png"><img alt="Pending Users" class="align-center" src="_images/user-mgmt-pending.png" style="width: 80%;" /></a>
+<p>From v0.23.1, new accounts would be added to a pending list and would require approval from an admin before they can access any resource. This version also allows whitelisting of email domains for OAuth users.
+Server admins can do that by adding a comma-separated list of domains to the <cite>ALLOWED_EMAIL_DOMAINS</cite> environment variable. eg: <cite>ALLOWED_EMAIL_DOMAINS=example.net,example.com</cite></p>
+</section>
+</section>
+
+
+           </div>
+          </div>
+          <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
+        <a href="pro/pro-users.html" class="btn btn-neutral float-left" title="Users in Netmaker Professional" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+        <a href="pro/pro-relay-server.html" class="btn btn-neutral float-right" title="Relay Servers" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>&#169; Copyright 2024, Netmaker Inc..</p>
+  </div>
+
+  Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    provided by <a href="https://readthedocs.org">Read the Docs</a>.
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>

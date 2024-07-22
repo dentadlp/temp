@@ -1,0 +1,190 @@
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" >
+<head>
+  <meta charset="utf-8" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Netmaker Professional Setup &mdash; Netmaker 0.24.3 documentation</title>
+      <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+      <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
+      <link rel="stylesheet" href="../_static/custom.css" type="text/css" />
+      <link rel="stylesheet" href="../_static/fonts.css" type="text/css" />
+  <!--[if lt IE 9]>
+    <script src="../_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+        <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
+        <script src="../_static/jquery.js"></script>
+        <script src="../_static/underscore.js"></script>
+        <script src="../_static/doctools.js"></script>
+    <script src="../_static/js/theme.js"></script>
+    <link rel="author" title="About these documents" href="../about.html" />
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="Users in Netmaker Professional" href="pro-users.html" />
+    <link rel="prev" title="Netmaker Professional" href="index.html" /> 
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+
+          
+          
+          <a href="../index.html" class="icon icon-home">
+            Netmaker
+          </a>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" aria-label="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../about.html">About</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../getting-started.html">Getting Started</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../features.html">Features</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="index.html">Netmaker Professional</a><ul class="current">
+<li class="toctree-l2 current"><a class="current reference internal" href="#">Netmaker Professional Setup</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#get-a-license">Get a License</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#setup-your-server">Setup your server</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#upgrade-to-pro-from-community-edition">Upgrade to Pro from Community Edition</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#optional-setup-your-server-for-prometheus-and-grafana">(Optional) Setup your server for Prometheus and Grafana</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="pro-users.html">Users in Netmaker Professional</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../oauth.html">Integrating OAuth</a></li>
+<li class="toctree-l2"><a class="reference internal" href="pro-relay-server.html">Relay Servers</a></li>
+<li class="toctree-l2"><a class="reference internal" href="pro-metrics.html">Netmaker Professional Metrics</a></li>
+<li class="toctree-l2"><a class="reference internal" href="pro-branding.html">UI Branding</a></li>
+<li class="toctree-l2"><a class="reference internal" href="rac.html">Netmaker Remote Access Client (RAC)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="pro-failovers.html">FailOver Servers</a></li>
+<li class="toctree-l2"><a class="reference internal" href="internet-gateways.html">Internet Gateways</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../upgrades.html">Upgrades</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../how-to-guides.html">How-to-Guides</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../references.html">References</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../license.html">License</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../conduct.html">Code of Conduct</a></li>
+</ul>
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../index.html">Netmaker</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="../index.html" class="icon icon-home" aria-label="Home"></a></li>
+          <li class="breadcrumb-item"><a href="../features.html">Features</a></li>
+          <li class="breadcrumb-item"><a href="index.html">Netmaker Professional</a></li>
+      <li class="breadcrumb-item active">Netmaker Professional Setup</li>
+      <li class="wy-breadcrumbs-aside">
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  <section id="netmaker-professional-setup">
+<h1>Netmaker Professional Setup<a class="headerlink" href="#netmaker-professional-setup" title="Permalink to this headline"></a></h1>
+<p>This guide covers how to get setup with Netmaker Professional. For pricing,visit <a class="reference external" href="https://www.netmaker.io/pricing">our pricing page</a></p>
+<section id="get-a-license">
+<h2>Get a License<a class="headerlink" href="#get-a-license" title="Permalink to this headline"></a></h2>
+<p>Visit <a class="reference external" href="https://app.netmaker.io">https://app.netmaker.io</a> to set up a self-hosted instance on the Netmaker SAAS platform. When you first visit the site, you should be prompted to create an account. After you make one, you will be automatically directed to the switch tenant dashboard.</p>
+<a class="reference internal image-reference" href="../_images/pro-aftersignup.png"><img alt="screeen after signup on SAAS" class="align-center" src="../_images/pro-aftersignup.png" style="width: 80%;" /></a>
+<p>Click the `` create tenant `` button and a modal will pop up. If you are a new user you can follow the link to setup a self hosted instance of Netmaker for a free 14 day trial, for existing users click on the contact us link.</p>
+<a class="reference internal image-reference" href="../_images/pro-createtenantmodal.png"><img alt="selfhosted switch" class="align-center" src="../_images/pro-createtenantmodal.png" style="width: 80%;" /></a>
+<p>After you click on the link, you will be taken to a page to fill out a licence request form. A representative will reach out to you to get you setup with a self-hosted tenant.</p>
+<a class="reference internal image-reference" href="../_images/pro-contactusform.png"><img alt="selfhosted switch" class="align-center" src="../_images/pro-contactusform.png" style="width: 80%;" /></a>
+<p>Once you have your tenant, you can click on manage account from the tenants table. Then you will need to add payment details before you can use your tenant, click on the stripe button to go to the stripe page and enter your payment info.</p>
+</section>
+<section id="setup-your-server">
+<h2>Setup your server<a class="headerlink" href="#setup-your-server" title="Permalink to this headline"></a></h2>
+<p>You will need the licence key and tenant id from the settings page back at the account management page on the settings tab.</p>
+<a class="reference internal image-reference" href="../_images/pro-license-key2.png"><img alt="License keys" class="align-center" src="../_images/pro-license-key2.png" style="width: 80%;" /></a>
+<p>Once you have your license key and tenant ID, you can get the nm-quick installer and run it.</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">wget</span> <span class="n">https</span><span class="p">:</span><span class="o">//</span><span class="n">raw</span><span class="o">.</span><span class="n">githubusercontent</span><span class="o">.</span><span class="n">com</span><span class="o">/</span><span class="n">gravitl</span><span class="o">/</span><span class="n">netmaker</span><span class="o">/</span><span class="n">master</span><span class="o">/</span><span class="n">scripts</span><span class="o">/</span><span class="n">nm</span><span class="o">-</span><span class="n">quick</span><span class="o">.</span><span class="n">sh</span>
+<span class="n">chmod</span> <span class="o">+</span><span class="n">x</span> <span class="n">nm</span><span class="o">-</span><span class="n">quick</span><span class="o">.</span><span class="n">sh</span>
+<span class="n">bash</span> <span class="n">nm</span><span class="o">-</span><span class="n">quick</span><span class="o">.</span><span class="n">sh</span>
+</pre></div>
+</div>
+<p>Follow the prompts for a pro edition server. provide the license key and tenant id when prompted.</p>
+</section>
+<section id="upgrade-to-pro-from-community-edition">
+<h2>Upgrade to Pro from Community Edition<a class="headerlink" href="#upgrade-to-pro-from-community-edition" title="Permalink to this headline"></a></h2>
+<p>You can upgrade from an existing community server to a pro server with this script. Follow the prompts to setup a pro server and the script will make the necessary changes to your netmaker.env file and grab the pro docker-compose.override.yml file.</p>
+<p>If you prefer to upgrade manually, go to your netmaker server and add the following to your netmaker.env file:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">LICENSE_KEY</span><span class="o">=&lt;</span><span class="n">license</span> <span class="n">key</span><span class="o">&gt;</span>
+<span class="n">NETMAKER_TENANT_ID</span><span class="o">=&lt;</span><span class="n">tenant</span> <span class="nb">id</span><span class="o">&gt;</span>
+</pre></div>
+</div>
+<p>Also change <code class="docutils literal notranslate"><span class="pre">SERVER_IMAGE_TAG</span></code> in netmaker.env to <code class="docutils literal notranslate"><span class="pre">&lt;version&gt;-ee</span></code>. For example: <code class="docutils literal notranslate"><span class="pre">SERVER_IMAGE_TAG=v0.21.2-ee</span></code></p>
+<p>Also change the <code class="docutils literal notranslate"><span class="pre">INSTALL_TYPE</span></code> from ce to pro.</p>
+<p>Then you will need to get the docker-compose pro file from here</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">wget</span> <span class="o">-</span><span class="n">O</span> <span class="o">/</span><span class="n">root</span><span class="o">/</span><span class="n">docker</span><span class="o">-</span><span class="n">compose</span><span class="o">.</span><span class="n">override</span><span class="o">.</span><span class="n">yml</span> <span class="n">https</span><span class="p">:</span><span class="o">//</span><span class="n">raw</span><span class="o">.</span><span class="n">githubusercontent</span><span class="o">.</span><span class="n">com</span><span class="o">/</span><span class="n">gravitl</span><span class="o">/</span><span class="n">netmaker</span><span class="o">/</span><span class="n">master</span><span class="o">/</span><span class="n">compose</span><span class="o">/</span><span class="n">docker</span><span class="o">-</span><span class="n">compose</span><span class="o">.</span><span class="n">pro</span><span class="o">.</span><span class="n">yml</span>
+</pre></div>
+</div>
+<p>No changes will need to be made to that file. It will use the configs listed in your netmaker.env file.</p>
+<p>After that run the following command:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">docker</span> <span class="n">kill</span> <span class="n">netmaker</span> <span class="n">netmaker</span><span class="o">-</span><span class="n">ui</span> <span class="o">&amp;&amp;</span> <span class="n">docker</span><span class="o">-</span><span class="n">compose</span> <span class="n">up</span> <span class="o">-</span><span class="n">d</span>
+</pre></div>
+</div>
+<p>When you browse to your self-hosted Netmaker via dashboard.&lt;YOUR_BASE_DOMAIN&gt;, you should see the professional UI and a new Dashboard. The top menu bar will have relays and metrics added.</p>
+<a class="reference internal image-reference" href="../_images/pro-new-dashboard.png"><img alt="new dashboard" class="align-center" src="../_images/pro-new-dashboard.png" style="width: 80%;" /></a>
+</section>
+<section id="optional-setup-your-server-for-prometheus-and-grafana">
+<h2>(Optional) Setup your server for Prometheus and Grafana<a class="headerlink" href="#optional-setup-your-server-for-prometheus-and-grafana" title="Permalink to this headline"></a></h2>
+<p>If you would like to use Netmaker’s custom Prometheus exporter and Grafana dashboard, your docker-compose.override.yml file will already have those section.</p>
+<p>In Netmaker.env, change the following:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">METRICS_EXPORTER</span><span class="o">=</span><span class="n">on</span>
+<span class="n">PROMETHEUS</span><span class="o">=</span><span class="n">on</span>
+</pre></div>
+</div>
+</section>
+</section>
+
+
+           </div>
+          </div>
+          <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
+        <a href="index.html" class="btn btn-neutral float-left" title="Netmaker Professional" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+        <a href="pro-users.html" class="btn btn-neutral float-right" title="Users in Netmaker Professional" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>&#169; Copyright 2024, Netmaker Inc..</p>
+  </div>
+
+  Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    provided by <a href="https://readthedocs.org">Read the Docs</a>.
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>

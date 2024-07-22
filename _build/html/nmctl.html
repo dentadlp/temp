@@ -1,0 +1,373 @@
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" >
+<head>
+  <meta charset="utf-8" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>NMCTL &mdash; Netmaker 0.24.3 documentation</title>
+      <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+      <link rel="stylesheet" href="_static/css/theme.css" type="text/css" />
+      <link rel="stylesheet" href="_static/custom.css" type="text/css" />
+      <link rel="stylesheet" href="_static/fonts.css" type="text/css" />
+  <!--[if lt IE 9]>
+    <script src="_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+        <script data-url_root="./" id="documentation_options" src="_static/documentation_options.js"></script>
+        <script src="_static/jquery.js"></script>
+        <script src="_static/underscore.js"></script>
+        <script src="_static/doctools.js"></script>
+    <script src="_static/js/theme.js"></script>
+    <link rel="author" title="About these documents" href="about.html" />
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+    <link rel="next" title="NMCTL - how to use netmaker from command line" href="nmctl-standalone.html" />
+    <link rel="prev" title="API Usage" href="api.html" /> 
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+
+          
+          
+          <a href="index.html" class="icon icon-home">
+            Netmaker
+          </a>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" aria-label="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="about.html">About</a></li>
+<li class="toctree-l1"><a class="reference internal" href="getting-started.html">Getting Started</a></li>
+<li class="toctree-l1"><a class="reference internal" href="features.html">Features</a></li>
+<li class="toctree-l1"><a class="reference internal" href="pro/index.html">Netmaker Professional</a></li>
+<li class="toctree-l1"><a class="reference internal" href="upgrades.html">Upgrades</a></li>
+<li class="toctree-l1"><a class="reference internal" href="how-to-guides.html">How-to-Guides</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="references.html">References</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="references.html#ui">UI</a></li>
+<li class="toctree-l2"><a class="reference internal" href="references.html#api">API</a></li>
+<li class="toctree-l2"><a class="reference internal" href="references.html#netclient">Netclient</a></li>
+<li class="toctree-l2 current"><a class="reference internal" href="references.html#nmctl">NMCTL</a><ul class="current">
+<li class="toctree-l3 current"><a class="current reference internal" href="#">NMCTL</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#quick-start">Quick Start</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="nmctl-standalone.html">NMCTL - how to use netmaker from command line</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="references.html#faq">FAQ</a></li>
+<li class="toctree-l2"><a class="reference internal" href="references.html#troubleshooting">Troubleshooting</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="license.html">License</a></li>
+<li class="toctree-l1"><a class="reference internal" href="conduct.html">Code of Conduct</a></li>
+</ul>
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="index.html">Netmaker</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="index.html" class="icon icon-home" aria-label="Home"></a></li>
+          <li class="breadcrumb-item"><a href="references.html">References</a></li>
+      <li class="breadcrumb-item active">NMCTL</li>
+      <li class="wy-breadcrumbs-aside">
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  <section id="nmctl">
+<h1>NMCTL<a class="headerlink" href="#nmctl" title="Permalink to this headline"></a></h1>
+<p>NMCTL is a CLI tool for interacting with the Netmaker API.</p>
+<section id="quick-start">
+<h2>Quick Start<a class="headerlink" href="#quick-start" title="Permalink to this headline"></a></h2>
+<p>Start with getting the latest nmctl binary specific to your operating system from the link below:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">https</span><span class="p">:</span><span class="o">//</span><span class="n">github</span><span class="o">.</span><span class="n">com</span><span class="o">/</span><span class="n">gravitl</span><span class="o">/</span><span class="n">netmaker</span><span class="o">/</span><span class="n">releases</span><span class="o">/</span><span class="n">latest</span>
+</pre></div>
+</div>
+<p>Make sure the binary is executable with <code class="docutils literal notranslate"><span class="pre">chmod</span> <span class="pre">+x</span> <span class="pre">nmctl</span></code> and then move it into your /usr/sbin folder.</p>
+<p>If everything is setup ok, you should be able to type <code class="docutils literal notranslate"><span class="pre">nmctl</span></code> and see the following:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">CLI</span> <span class="k">for</span> <span class="n">interacting</span> <span class="k">with</span> <span class="n">Netmaker</span> <span class="n">Server</span>
+
+<span class="n">Usage</span><span class="p">:</span>
+  <span class="n">nmctl</span> <span class="p">[</span><span class="n">command</span><span class="p">]</span>
+
+<span class="n">Available</span> <span class="n">Commands</span><span class="p">:</span>
+  <span class="n">acl</span>             <span class="n">Manage</span> <span class="n">Access</span> <span class="n">Control</span> <span class="n">Lists</span> <span class="p">(</span><span class="n">ACLs</span><span class="p">)</span>
+  <span class="n">completion</span>      <span class="n">Generate</span> <span class="n">the</span> <span class="n">autocompletion</span> <span class="n">script</span> <span class="k">for</span> <span class="n">the</span> <span class="n">specified</span> <span class="n">shell</span>
+  <span class="n">context</span>         <span class="n">Manage</span> <span class="n">various</span> <span class="n">netmaker</span> <span class="n">server</span> <span class="n">configurations</span>
+  <span class="n">dns</span>             <span class="n">Manage</span> <span class="n">DNS</span> <span class="n">entries</span> <span class="n">associated</span> <span class="k">with</span> <span class="n">a</span> <span class="n">network</span>
+  <span class="n">enrollment_key</span>  <span class="n">Manage</span> <span class="n">Enrollment</span> <span class="n">Keys</span>
+  <span class="n">ext_client</span>      <span class="n">Manage</span> <span class="n">Remote</span> <span class="n">Access</span> <span class="n">Clients</span>
+  <span class="n">help</span>            <span class="n">Help</span> <span class="n">about</span> <span class="nb">any</span> <span class="n">command</span>
+  <span class="n">host</span>            <span class="n">Manage</span> <span class="n">hosts</span>
+  <span class="n">logs</span>            <span class="n">Retrieve</span> <span class="n">server</span> <span class="n">logs</span>
+  <span class="n">metrics</span>         <span class="n">Fetch</span> <span class="n">metrics</span> <span class="n">of</span> <span class="n">nodes</span><span class="o">/</span><span class="n">networks</span>
+  <span class="n">network</span>         <span class="n">Manage</span> <span class="n">Netmaker</span> <span class="n">Networks</span>
+  <span class="n">network_user</span>    <span class="n">Manage</span> <span class="n">Network</span> <span class="n">Users</span>
+  <span class="n">node</span>            <span class="n">Manage</span> <span class="n">nodes</span> <span class="n">associated</span> <span class="k">with</span> <span class="n">a</span> <span class="n">network</span>
+  <span class="n">server</span>          <span class="n">Get</span> <span class="n">netmaker</span> <span class="n">server</span> <span class="n">information</span>
+  <span class="n">user</span>            <span class="n">Manage</span> <span class="n">users</span> <span class="ow">and</span> <span class="n">permissions</span>
+  <span class="n">usergroup</span>       <span class="n">Manage</span> <span class="n">User</span> <span class="n">Groups</span>
+
+<span class="n">Flags</span><span class="p">:</span>
+  <span class="o">-</span><span class="n">h</span><span class="p">,</span> <span class="o">--</span><span class="n">help</span>   <span class="n">help</span> <span class="k">for</span> <span class="n">nmctl</span>
+
+<span class="n">Use</span> <span class="s2">&quot;nmctl [command] --help&quot;</span> <span class="k">for</span> <span class="n">more</span> <span class="n">information</span> <span class="n">about</span> <span class="n">a</span> <span class="n">command</span><span class="o">.</span>
+</pre></div>
+</div>
+<p>Your CLI should be ready to go at this point.</p>
+<section id="context">
+<h3>Context<a class="headerlink" href="#context" title="Permalink to this headline"></a></h3>
+<p>Before running any commands, a context has to be set which stores the API endpoint information. This allows the CLI to know which server to communicate with, and the user account to use.</p>
+<p>NMCLI supports connecting to both standalone (self-hosted) and SaaS(managed) tenants. This is specified with a flag. More details below.</p>
+<section id="connecting-to-standalone-self-hosted-tenants">
+<h4>Connecting to standalone (self-hosted) tenants<a class="headerlink" href="#connecting-to-standalone-self-hosted-tenants" title="Permalink to this headline"></a></h4>
+<p>Assuming your tenant is hosted at <cite>https://api.netmaker.example.com</cite></p>
+<p>You can use your <cite>username</cite> and <cite>password</cite> that you use to sign in to the dashboard UI to set the context. Then you can set the CLI to use that context.</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">nmctl</span> <span class="n">context</span> <span class="nb">set</span> <span class="o">&lt;</span><span class="n">context</span> <span class="n">name</span><span class="o">&gt;</span> <span class="o">--</span><span class="n">endpoint</span><span class="o">=</span><span class="n">https</span><span class="p">:</span><span class="o">//</span><span class="n">api</span><span class="o">.</span><span class="n">netmaker</span><span class="o">.</span><span class="n">example</span><span class="o">.</span><span class="n">com</span>  <span class="o">--</span><span class="n">username</span><span class="o">=&lt;</span><span class="n">username</span><span class="o">&gt;</span> <span class="o">--</span><span class="n">password</span><span class="o">=&lt;</span><span class="n">password</span><span class="o">&gt;</span>  <span class="c1"># create the context</span>
+<span class="n">nmctl</span> <span class="n">context</span> <span class="n">use</span> <span class="o">&lt;</span><span class="n">context</span> <span class="n">name</span><span class="o">&gt;</span>  <span class="c1"># apply the created context</span>
+</pre></div>
+</div>
+<p>You can also authenticate via OAuth with the following:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">nmctl</span> <span class="n">context</span> <span class="nb">set</span> <span class="o">&lt;</span><span class="n">context</span> <span class="n">name</span><span class="o">&gt;</span> <span class="o">--</span><span class="n">endpoint</span><span class="o">=</span><span class="n">https</span><span class="p">:</span><span class="o">//</span><span class="n">api</span><span class="o">.</span><span class="n">netmaker</span><span class="o">.</span><span class="n">example</span><span class="o">.</span><span class="n">com</span>  <span class="o">--</span><span class="n">sso</span>  <span class="c1"># create the context for OAuth (Social Sign On)</span>
+<span class="n">nmctl</span> <span class="n">context</span> <span class="n">use</span> <span class="o">&lt;</span><span class="n">context</span> <span class="n">name</span><span class="o">&gt;</span>  <span class="c1"># apply the created context</span>
+</pre></div>
+</div>
+</section>
+<section id="connecting-to-saas-managed-tenants">
+<h4>Connecting to SaaS (managed) tenants<a class="headerlink" href="#connecting-to-saas-managed-tenants" title="Permalink to this headline"></a></h4>
+<p>You can also authenticate with a managed (SaaS) tenant with the following commands:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">nmctl</span> <span class="n">context</span> <span class="nb">set</span> <span class="o">&lt;</span><span class="n">context</span> <span class="n">name</span><span class="o">&gt;</span> <span class="o">--</span><span class="n">saas</span> <span class="o">--</span><span class="n">tenant_id</span><span class="o">=&lt;</span><span class="n">tenant</span> <span class="n">ID</span><span class="o">&gt;</span> <span class="o">--</span><span class="n">username</span><span class="o">=&lt;</span><span class="n">username</span><span class="o">&gt;</span> <span class="o">--</span><span class="n">password</span><span class="o">=&lt;</span><span class="n">password</span><span class="o">&gt;</span>  <span class="c1"># create the context</span>
+<span class="n">nmctl</span> <span class="n">context</span> <span class="n">use</span> <span class="o">&lt;</span><span class="n">context</span> <span class="n">name</span><span class="o">&gt;</span>  <span class="c1"># apply the created context</span>
+</pre></div>
+</div>
+<p>You can also authenticate via OAuth with the following:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">nmctl</span> <span class="n">context</span> <span class="nb">set</span> <span class="o">&lt;</span><span class="n">context</span> <span class="n">name</span><span class="o">&gt;</span> <span class="o">--</span><span class="n">saas</span> <span class="o">--</span><span class="n">sso</span> <span class="o">--</span><span class="n">tenant_id</span><span class="o">=&lt;</span><span class="n">tenant</span> <span class="n">ID</span><span class="o">&gt;</span>  <span class="c1"># create the context for OAuth (Social Sign On)</span>
+<span class="n">nmctl</span> <span class="n">context</span> <span class="n">use</span> <span class="o">&lt;</span><span class="n">context</span> <span class="n">name</span><span class="o">&gt;</span>  <span class="c1"># apply the created context</span>
+</pre></div>
+</div>
+</section>
+<section id="list-and-switch-between-contexts">
+<h4>List and switch between contexts<a class="headerlink" href="#list-and-switch-between-contexts" title="Permalink to this headline"></a></h4>
+<p>You can see a list of all your contexts that you have created with the following:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">nmctl</span> <span class="n">context</span> <span class="nb">list</span>
+</pre></div>
+</div>
+<p>That list also tells you what context/tenant is currently selected.</p>
+<p>You can switch to a different context by using the <cite>use</cite> subcommand:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">nmctl</span> <span class="n">context</span> <span class="n">use</span> <span class="o">&lt;</span><span class="n">context</span> <span class="n">name</span><span class="o">&gt;</span>
+</pre></div>
+</div>
+</section>
+<section id="delete-contexts">
+<h4>Delete contexts<a class="headerlink" href="#delete-contexts" title="Permalink to this headline"></a></h4>
+<p>You can delete a context with the following:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">nmctl</span> <span class="n">context</span> <span class="n">delete</span> <span class="o">&lt;</span><span class="n">context</span> <span class="n">name</span><span class="o">&gt;</span>
+</pre></div>
+</div>
+</section>
+</section>
+<section id="network">
+<h3>Network<a class="headerlink" href="#network" title="Permalink to this headline"></a></h3>
+<p>Create a network with the name <cite>test_net</cite> and CIDR <cite>10.11.13.0/24</cite>.</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">nmctl</span> <span class="n">network</span> <span class="n">create</span> <span class="o">--</span><span class="n">name</span><span class="o">=</span><span class="s2">&quot;test_net&quot;</span> <span class="o">--</span><span class="n">ipv4_addr</span><span class="o">=</span><span class="s2">&quot;10.11.13.0/24&quot;</span>
+</pre></div>
+</div>
+<p>Fetch details of the created network.</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">nmctl</span> <span class="n">network</span> <span class="nb">list</span>
+<span class="o">+----------+----------------------+----------------------+---------------------------+---------------------------+</span>
+<span class="o">|</span>  <span class="n">NETID</span>   <span class="o">|</span> <span class="n">ADDRESS</span> <span class="n">RANGE</span> <span class="p">(</span><span class="n">IPV4</span><span class="p">)</span> <span class="o">|</span> <span class="n">ADDRESS</span> <span class="n">RANGE</span> <span class="p">(</span><span class="n">IPV6</span><span class="p">)</span> <span class="o">|</span>   <span class="n">NETWORK</span> <span class="n">LAST</span> <span class="n">MODIFIED</span>   <span class="o">|</span>    <span class="n">NODES</span> <span class="n">LAST</span> <span class="n">MODIFIED</span>    <span class="o">|</span>
+<span class="o">+----------+----------------------+----------------------+---------------------------+---------------------------+</span>
+<span class="o">|</span> <span class="n">test_net</span> <span class="o">|</span> <span class="mf">10.11.13.0</span><span class="o">/</span><span class="mi">24</span>        <span class="o">|</span>                      <span class="o">|</span> <span class="mi">2022</span><span class="o">-</span><span class="mi">12</span><span class="o">-</span><span class="mi">14</span><span class="n">T13</span><span class="p">:</span><span class="mi">08</span><span class="p">:</span><span class="mi">47</span><span class="o">+</span><span class="mi">05</span><span class="p">:</span><span class="mi">30</span> <span class="o">|</span> <span class="mi">2022</span><span class="o">-</span><span class="mi">12</span><span class="o">-</span><span class="mi">14</span><span class="n">T13</span><span class="p">:</span><span class="mi">08</span><span class="p">:</span><span class="mi">47</span><span class="o">+</span><span class="mi">05</span><span class="p">:</span><span class="mi">30</span> <span class="o">|</span>
+<span class="o">+----------+----------------------+----------------------+---------------------------+---------------------------+</span>
+</pre></div>
+</div>
+</section>
+<section id="access-key">
+<h3>Access Key<a class="headerlink" href="#access-key" title="Permalink to this headline"></a></h3>
+<p>Create an access key for the created network with 100 uses. This key shall be used by nodes to join the network <cite>test_net</cite>.</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">nmctl</span> <span class="n">keys</span> <span class="n">create</span> <span class="n">test_net</span> <span class="mi">100</span>
+<span class="p">{</span>
+  <span class="s2">&quot;name&quot;</span><span class="p">:</span> <span class="s2">&quot;key-818a4ac3fe85a9d0&quot;</span><span class="p">,</span>
+  <span class="s2">&quot;value&quot;</span><span class="p">:</span> <span class="s2">&quot;f0edf9ef08fa2b1a&quot;</span><span class="p">,</span>
+  <span class="s2">&quot;accessstring&quot;</span><span class="p">:</span> <span class="s2">&quot;eyJhcZljb25uc3RyaW5nIjoiYXBpLm5ldG1ha2VyLmV6ZmxvLmluOjQ0MyIsIm5ldHdvcmsiOiJ0ZXN0X25ldCIsImtleSI6ImYwZWRmOWVmMDhmYTJiMWEiLCJsb2NhbHJhbmdlIjoiIn0=&quot;</span><span class="p">,</span>
+  <span class="s2">&quot;uses&quot;</span><span class="p">:</span> <span class="mi">100</span><span class="p">,</span>
+  <span class="s2">&quot;expiration&quot;</span><span class="p">:</span> <span class="n">null</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+</section>
+<section id="nodes">
+<h3>Nodes<a class="headerlink" href="#nodes" title="Permalink to this headline"></a></h3>
+<p>Connect a node to the network using <a class="reference internal" href="netclient.html"><span class="doc">netclient</span></a> and the access key created above. Use the <cite>accessstring</cite> as token.</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">netclient</span> <span class="n">join</span> <span class="o">-</span><span class="n">t</span> <span class="o">&lt;</span><span class="n">token</span><span class="o">&gt;</span>
+</pre></div>
+</div>
+<p>List all nodes. This displays information about each node such as the address assigned, id, name etc</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">nmctl</span> <span class="n">node</span> <span class="nb">list</span>
+<span class="o">+--------------+---------------------------+---------+----------+--------+-----------------------+-------+--------------------------------------+</span>
+<span class="o">|</span>     <span class="n">NAME</span>     <span class="o">|</span>         <span class="n">ADDRESSES</span>         <span class="o">|</span> <span class="n">VERSION</span> <span class="o">|</span> <span class="n">NETWORK</span>  <span class="o">|</span> <span class="n">EGRESS</span> <span class="o">|</span> <span class="n">REMOTE</span> <span class="n">ACCESS</span> <span class="n">GATEWAY</span> <span class="o">|</span> <span class="n">RELAY</span> <span class="o">|</span>                  <span class="n">ID</span>                  <span class="o">|</span>
+<span class="o">+--------------+---------------------------+---------+----------+--------+-----------------------+-------+--------------------------------------+</span>
+<span class="o">|</span> <span class="n">test_node</span>    <span class="o">|</span> <span class="mf">10.11.13.254</span>              <span class="o">|</span> <span class="n">v0</span><span class="mf">.17.0</span> <span class="o">|</span> <span class="n">test_net</span> <span class="o">|</span> <span class="n">no</span>     <span class="o">|</span> <span class="n">no</span>                    <span class="o">|</span> <span class="n">no</span>    <span class="o">|</span> <span class="mi">938</span><span class="n">d7861</span><span class="o">-</span><span class="mi">55</span><span class="n">fc</span><span class="o">-</span><span class="mi">40</span><span class="n">a9</span><span class="o">-</span><span class="mi">970</span><span class="n">d</span><span class="o">-</span><span class="mi">6</span><span class="n">d70acfc3a80</span> <span class="o">|</span>
+<span class="o">+--------------+---------------------------+---------+----------+--------+-----------------------+-------+--------------------------------------+</span>
+</pre></div>
+</div>
+<p>Using nmctl, we can turn the node into egress, remote access gateway or a relay. Lets turn the node into an remote access gateway by supplying the network name and node id as parameters.</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">nmctl</span> <span class="n">node</span> <span class="n">create_remote_access_gateway</span> <span class="n">test_net</span> <span class="mi">938</span><span class="n">d7861</span><span class="o">-</span><span class="mi">55</span><span class="n">fc</span><span class="o">-</span><span class="mi">40</span><span class="n">a9</span><span class="o">-</span><span class="mi">970</span><span class="n">d</span><span class="o">-</span><span class="mi">6</span><span class="n">d70acfc3a80</span>
+</pre></div>
+</div>
+<p>Fetching the node list once again we can see that our node has been turned into a remote access gateway.</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">nmctl</span> <span class="n">node</span> <span class="nb">list</span>
+<span class="o">+--------------+---------------------------+---------+----------+--------+-----------------------+-------+--------------------------------------+</span>
+<span class="o">|</span>     <span class="n">NAME</span>     <span class="o">|</span>         <span class="n">ADDRESSES</span>         <span class="o">|</span> <span class="n">VERSION</span> <span class="o">|</span> <span class="n">NETWORK</span>  <span class="o">|</span> <span class="n">EGRESS</span> <span class="o">|</span> <span class="n">REMOTE</span> <span class="n">ACCESS</span> <span class="n">GATEWAY</span> <span class="o">|</span> <span class="n">RELAY</span> <span class="o">|</span>                  <span class="n">ID</span>                  <span class="o">|</span>
+<span class="o">+--------------+---------------------------+---------+----------+--------+-----------------------+-------+--------------------------------------+</span>
+<span class="o">|</span> <span class="n">test_node</span>    <span class="o">|</span> <span class="mf">10.11.13.254</span>              <span class="o">|</span> <span class="n">v0</span><span class="mf">.17.0</span> <span class="o">|</span> <span class="n">test_net</span> <span class="o">|</span> <span class="n">no</span>     <span class="o">|</span> <span class="n">yes</span>                   <span class="o">|</span> <span class="n">no</span>    <span class="o">|</span> <span class="mi">938</span><span class="n">d7861</span><span class="o">-</span><span class="mi">55</span><span class="n">fc</span><span class="o">-</span><span class="mi">40</span><span class="n">a9</span><span class="o">-</span><span class="mi">970</span><span class="n">d</span><span class="o">-</span><span class="mi">6</span><span class="n">d70acfc3a80</span> <span class="o">|</span>
+<span class="o">+--------------+---------------------------+---------+----------+--------+-----------------------+-------+--------------------------------------+</span>
+</pre></div>
+</div>
+</section>
+<section id="remote-access-clients">
+<h3>Remote Access Clients<a class="headerlink" href="#remote-access-clients" title="Permalink to this headline"></a></h3>
+<p>Adding a <a class="reference internal" href="external-clients.html"><span class="doc">Remote Access Client</span></a> to the network is just as easy. Requires the <cite>network name</cite> and <cite>node id</cite> as input parameters.</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">nmctl</span> <span class="n">ext_client</span> <span class="n">create</span> <span class="n">test_net</span> <span class="mi">938</span><span class="n">d7861</span><span class="o">-</span><span class="mi">55</span><span class="n">fc</span><span class="o">-</span><span class="mi">40</span><span class="n">a9</span><span class="o">-</span><span class="mi">970</span><span class="n">d</span><span class="o">-</span><span class="mi">6</span><span class="n">d70acfc3a80</span>
+<span class="n">Success</span>
+</pre></div>
+</div>
+<p>List all available Remote Access Clients.</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">nmctl</span> <span class="n">ext_client</span> <span class="nb">list</span>
+<span class="o">+--------------+---------+--------------+--------------+---------+-------------------------------+</span>
+<span class="o">|</span>  <span class="n">CLIENT</span> <span class="n">ID</span>   <span class="o">|</span> <span class="n">NETWORK</span> <span class="o">|</span> <span class="n">IPV4</span> <span class="n">ADDRESS</span> <span class="o">|</span> <span class="n">IPV6</span> <span class="n">ADDRESS</span> <span class="o">|</span> <span class="n">ENABLED</span> <span class="o">|</span>         <span class="n">LAST</span> <span class="n">MODIFIED</span>         <span class="o">|</span>
+<span class="o">+--------------+---------+--------------+--------------+---------+-------------------------------+</span>
+<span class="o">|</span> <span class="n">limp</span><span class="o">-</span><span class="n">chicken</span> <span class="o">|</span><span class="n">test_net</span> <span class="o">|</span> <span class="mf">10.11.13.2</span>   <span class="o">|</span>              <span class="o">|</span> <span class="n">true</span>    <span class="o">|</span> <span class="mi">2022</span><span class="o">-</span><span class="mi">11</span><span class="o">-</span><span class="mi">23</span> <span class="mi">18</span><span class="p">:</span><span class="mi">28</span><span class="p">:</span><span class="mi">57</span> <span class="o">+</span><span class="mi">0530</span> <span class="n">IST</span> <span class="o">|</span>
+<span class="o">+--------------+---------+--------------+--------------+---------+-------------------------------+</span>
+</pre></div>
+</div>
+<p>The wireguard config of an Remote Access Client can also be fetched with the <cite>network name</cite> and <cite>client id</cite>.</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">nmctl</span> <span class="n">ext_client</span> <span class="n">config</span> <span class="n">test_net</span> <span class="n">limp</span><span class="o">-</span><span class="n">chicken</span>
+
+<span class="p">[</span><span class="n">Interface</span><span class="p">]</span>
+<span class="n">Address</span> <span class="o">=</span> <span class="mf">10.11.13.2</span><span class="o">/</span><span class="mi">32</span>
+<span class="n">PrivateKey</span> <span class="o">=</span> <span class="mi">4</span><span class="n">Ojhsn</span><span class="o">/</span><span class="n">uLcH6xta6zqokQ</span><span class="o">+</span><span class="n">GiRuZwesdzE2hDSa6vYWc</span><span class="o">=</span>
+<span class="n">MTU</span> <span class="o">=</span> <span class="mi">1280</span>
+
+
+<span class="p">[</span><span class="n">Peer</span><span class="p">]</span>
+<span class="n">PublicKey</span> <span class="o">=</span> <span class="n">h96G9R8qqHIm6OfFgIZNBlRE5uCumkSZv4Pwn2DVXEs</span><span class="o">=</span>
+<span class="n">AllowedIPs</span> <span class="o">=</span> <span class="mf">10.11.13.0</span><span class="o">/</span><span class="mi">24</span>
+<span class="n">Endpoint</span> <span class="o">=</span> <span class="mf">138.209.145.214</span><span class="p">:</span><span class="mi">51824</span>
+<span class="n">PersistentKeepalive</span> <span class="o">=</span> <span class="mi">20</span>
+</pre></div>
+</div>
+</section>
+<section id="acls">
+<h3>ACLs<a class="headerlink" href="#acls" title="Permalink to this headline"></a></h3>
+<p>Access Control between hosts can be managed via the NMCTL CLI. These settings allow the network admin to specify which hosts are allowed to communicate between each other.</p>
+<section id="list">
+<h4>List<a class="headerlink" href="#list" title="Permalink to this headline"></a></h4>
+<p>To list all access control settings for a network:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">nmctl</span> <span class="n">acl</span> <span class="nb">list</span> <span class="o">&lt;</span><span class="n">network</span><span class="o">&gt;</span>
+</pre></div>
+</div>
+</section>
+<section id="allow-deny">
+<h4>Allow/Deny<a class="headerlink" href="#allow-deny" title="Permalink to this headline"></a></h4>
+<p>To allow communication between two hosts on a network:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">nmctl</span> <span class="n">acl</span> <span class="n">allow</span> <span class="o">&lt;</span><span class="n">network</span><span class="o">&gt;</span> <span class="o">&lt;</span><span class="n">host</span> <span class="mi">1</span> <span class="n">ID</span><span class="o">&gt;</span> <span class="o">&lt;</span><span class="n">host</span> <span class="mi">2</span> <span class="n">ID</span><span class="o">&gt;</span>
+</pre></div>
+</div>
+<p>To deny communication between two hosts:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">nmctl</span> <span class="n">acl</span> <span class="n">deny</span> <span class="o">&lt;</span><span class="n">network</span><span class="o">&gt;</span> <span class="o">&lt;</span><span class="n">host</span> <span class="mi">1</span> <span class="n">ID</span><span class="o">&gt;</span> <span class="o">&lt;</span><span class="n">host</span> <span class="mi">2</span> <span class="n">ID</span><span class="o">&gt;</span>
+</pre></div>
+</div>
+<p>Host IDs can be retrieved with the <cite>nmctl node list</cite> command.</p>
+<p>The global <cite>–output</cite> flag can be used to format how a network’s ACLs are outputted.</p>
+</section>
+</section>
+<section id="help">
+<h3>Help<a class="headerlink" href="#help" title="Permalink to this headline"></a></h3>
+<p>Further information about any subcommand is available using the <strong>–help</strong> flag</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">nmctl</span> <span class="n">subcommand</span> <span class="o">--</span><span class="n">help</span>
+</pre></div>
+</div>
+<p>Example:-</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">nmctl</span> <span class="n">node</span> <span class="o">--</span><span class="n">help</span>
+<span class="n">Manage</span> <span class="n">nodes</span> <span class="n">associated</span> <span class="k">with</span> <span class="n">a</span> <span class="n">network</span>
+
+<span class="n">Usage</span><span class="p">:</span>
+  <span class="n">nmctl</span> <span class="n">node</span> <span class="p">[</span><span class="n">command</span><span class="p">]</span>
+
+<span class="n">Available</span> <span class="n">Commands</span><span class="p">:</span>
+  <span class="n">create_egress</span>                <span class="n">Turn</span> <span class="n">a</span> <span class="n">Node</span> <span class="n">into</span> <span class="n">a</span> <span class="n">Egress</span>
+  <span class="n">create_remote_access_gateway</span> <span class="n">Turn</span> <span class="n">a</span> <span class="n">Node</span> <span class="n">into</span> <span class="n">a</span> <span class="n">Remote</span> <span class="n">Access</span> <span class="n">Gateway</span>
+  <span class="n">create_relay</span>                 <span class="n">Turn</span> <span class="n">a</span> <span class="n">Node</span> <span class="n">into</span> <span class="n">a</span> <span class="n">Relay</span>
+  <span class="n">delete</span>                       <span class="n">Delete</span> <span class="n">a</span> <span class="n">Node</span>
+  <span class="n">delete_egress</span>                <span class="n">Delete</span> <span class="n">Egress</span> <span class="n">role</span> <span class="kn">from</span> <span class="nn">a</span> <span class="n">Node</span>
+  <span class="n">delete_remote_access_gateway</span> <span class="n">Delete</span> <span class="n">Remote</span> <span class="n">Access</span> <span class="n">Gateway</span> <span class="n">role</span> <span class="kn">from</span> <span class="nn">a</span> <span class="n">Node</span>
+  <span class="n">delete_relay</span>                 <span class="n">Delete</span> <span class="n">Relay</span> <span class="n">role</span> <span class="kn">from</span> <span class="nn">a</span> <span class="n">Node</span>
+  <span class="n">get</span>                          <span class="n">Get</span> <span class="n">a</span> <span class="n">node</span> <span class="n">by</span> <span class="n">ID</span>
+  <span class="nb">list</span>                         <span class="n">List</span> <span class="nb">all</span> <span class="n">nodes</span>
+  <span class="n">uncordon</span>                     <span class="n">Get</span> <span class="n">a</span> <span class="n">node</span> <span class="n">by</span> <span class="n">ID</span>
+  <span class="n">update</span>                       <span class="n">Update</span> <span class="n">a</span> <span class="n">Node</span>
+
+<span class="n">Flags</span><span class="p">:</span>
+  <span class="o">-</span><span class="n">h</span><span class="p">,</span> <span class="o">--</span><span class="n">help</span>     <span class="n">help</span> <span class="k">for</span> <span class="n">node</span>
+
+<span class="n">Use</span> <span class="s2">&quot;nmctl node [command] --help&quot;</span> <span class="k">for</span> <span class="n">more</span> <span class="n">information</span> <span class="n">about</span> <span class="n">a</span> <span class="n">command</span><span class="o">.</span>
+</pre></div>
+</div>
+</section>
+</section>
+</section>
+
+
+           </div>
+          </div>
+          <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
+        <a href="api.html" class="btn btn-neutral float-left" title="API Usage" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+        <a href="nmctl-standalone.html" class="btn btn-neutral float-right" title="NMCTL - how to use netmaker from command line" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>&#169; Copyright 2024, Netmaker Inc..</p>
+  </div>
+
+  Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    provided by <a href="https://readthedocs.org">Read the Docs</a>.
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>

@@ -1,0 +1,244 @@
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" >
+<head>
+  <meta charset="utf-8" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>User Management &mdash; Netmaker 0.24.3 documentation</title>
+      <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+      <link rel="stylesheet" href="_static/css/theme.css" type="text/css" />
+      <link rel="stylesheet" href="_static/custom.css" type="text/css" />
+      <link rel="stylesheet" href="_static/fonts.css" type="text/css" />
+  <!--[if lt IE 9]>
+    <script src="_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+        <script data-url_root="./" id="documentation_options" src="_static/documentation_options.js"></script>
+        <script src="_static/jquery.js"></script>
+        <script src="_static/underscore.js"></script>
+        <script src="_static/doctools.js"></script>
+    <script src="_static/js/theme.js"></script>
+    <link rel="author" title="About these documents" href="about.html" />
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+    <link rel="next" title="egress" href="egress-gateway.html" />
+    <link rel="prev" title="Features" href="features.html" /> 
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+
+          
+          
+          <a href="index.html" class="icon icon-home">
+            Netmaker
+          </a>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" aria-label="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="about.html">About</a></li>
+<li class="toctree-l1"><a class="reference internal" href="getting-started.html">Getting Started</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="features.html">Features</a><ul class="current">
+<li class="toctree-l2 current"><a class="current reference internal" href="#">User Management</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#users-in-netmaker-professional">Users in Netmaker Professional</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#adding-users">Adding users</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#attaching-or-removing-user-from-a-remote-access-gateway">Attaching or removing user from a remote access gateway</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#using-the-remote-access-client-rac">Using the Remote Access Client (RAC)</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#using-netmaker-like-a-traditional-vpn">Using Netmaker like a traditional VPN</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#controlling-rac-user-sessions">Controlling RAC user sessions</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#re-starting-the-service-daemon-process">(Re)Starting the service/daemon process</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#manual-daemon-restart-on-windows">Manual daemon restart on Windows</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#manual-daemon-restart-on-linux">Manual daemon restart on Linux</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#manual-daemon-restart-on-mac">Manual daemon restart on Mac</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="#faqs-and-known-issues">FAQs and Known Issues</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="egress-gateway.html">egress</a></li>
+<li class="toctree-l2"><a class="reference internal" href="external-clients.html">Remote Access Gateways and Clients</a></li>
+<li class="toctree-l2"><a class="reference internal" href="acls.html">ACLs</a></li>
+<li class="toctree-l2"><a class="reference internal" href="pro/index.html">Netmaker Professional</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="pro/index.html">Netmaker Professional</a></li>
+<li class="toctree-l1"><a class="reference internal" href="upgrades.html">Upgrades</a></li>
+<li class="toctree-l1"><a class="reference internal" href="how-to-guides.html">How-to-Guides</a></li>
+<li class="toctree-l1"><a class="reference internal" href="references.html">References</a></li>
+<li class="toctree-l1"><a class="reference internal" href="license.html">License</a></li>
+<li class="toctree-l1"><a class="reference internal" href="conduct.html">Code of Conduct</a></li>
+</ul>
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="index.html">Netmaker</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="index.html" class="icon icon-home" aria-label="Home"></a></li>
+          <li class="breadcrumb-item"><a href="features.html">Features</a></li>
+      <li class="breadcrumb-item active">User Management</li>
+      <li class="wy-breadcrumbs-aside">
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  <section id="user-management">
+<span id="user-manage"></span><h1>User Management<a class="headerlink" href="#user-management" title="Permalink to this headline"></a></h1>
+<p><strong>Superadmin Signup</strong></p>
+<hr class="docutils" />
+<p>When you start Netmaker for the first time, you will be prompted to create a superadmin account from the UI like below</p>
+<a class="reference internal image-reference" href="_images/ui-signup.png"><img alt="sign up" class="align-center" src="_images/ui-signup.png" style="width: 80%;" /></a>
+<p>Input your username and a super memorable but strong password then click on the <cite>Sign up</cite> button. Once you’ve signed up, you can login to your Netmaker server with the account.</p>
+<hr class="docutils" />
+<a class="reference internal image-reference" href="_images/ui-login.png"><img alt="log in" class="align-center" src="_images/ui-login.png" style="width: 80%;" /></a>
+</section>
+<section id="users-in-netmaker-professional">
+<h1>Users in Netmaker Professional<a class="headerlink" href="#users-in-netmaker-professional" title="Permalink to this headline"></a></h1>
+<p>Netmaker Professional offers advanced user management features. The super admin can create users with either a user or admin role. Only Admins can access the dashboard, the normal users can use remote access client to join the network through a gateway.
+Admins can add users and assign them to remote access gateways, which includes managing the user’s access to different remote access gateways.</p>
+<p>Here is a breakdown of the different user types and their permissions:</p>
+<ul class="simple">
+<li><p>User: Users do not have access to the Netmaker dashboard. They can only use the remote access client to connect to a gateway.</p></li>
+<li><p>Admin: They can create and manage users, networks, and gateways. They cannot create/manage other admins</p></li>
+<li><p>Super Admin: Super admins have full access to Netmaker. They can create and manage users, admins, networks, and gateways. They can also manage user and admin permissions.</p></li>
+</ul>
+<section id="adding-users">
+<h2>Adding users<a class="headerlink" href="#adding-users" title="Permalink to this headline"></a></h2>
+<p>To add a user, go to the Users section and click the Add User button. Fill in the user’s details, including their name, password, and role.</p>
+<ul class="simple">
+<li><p>As a super admin, you can add users with the role of admin or user.</p></li>
+<li><p>As an admin, you can only add users with the role of user.</p></li>
+</ul>
+<a class="reference internal image-reference" href="_images/add-user.png"><img alt="Add User" class="align-center" src="_images/add-user.png" style="width: 80%;" /></a>
+<p>The credentials will need to be shared with the added user.</p>
+</section>
+<section id="attaching-or-removing-user-from-a-remote-access-gateway">
+<h2>Attaching or removing user from a remote access gateway<a class="headerlink" href="#attaching-or-removing-user-from-a-remote-access-gateway" title="Permalink to this headline"></a></h2>
+<p>To attach users to a remote access gateway or remove users from a gateway, you will need to have the gateway set up.
+Once the remote access gateway is set up, you will see an option to attach or remove users from the gateway’s dropdown menu on the table row.</p>
+<a class="reference internal image-reference" href="_images/gateway-dropdown.png"><img alt="Add Remove User dropdown" class="align-center" src="_images/gateway-dropdown.png" style="width: 80%;" /></a>
+<p>You can click the button to either attach or remove a user</p>
+<a class="reference internal image-reference" href="_images/attach-remove-users.png"><img alt="Attach Remove User Modal" class="align-center" src="_images/attach-remove-users.png" style="width: 80%;" /></a>
+</section>
+<section id="using-the-remote-access-client-rac">
+<h2>Using the Remote Access Client (RAC)<a class="headerlink" href="#using-the-remote-access-client-rac" title="Permalink to this headline"></a></h2>
+<p>Once a user has been attached to a remote access gateway, they can connect to a network using the remote access client. To do this, they will first need to log in using the credentials that were provided to them. Social login is also supported.</p>
+<a class="reference internal image-reference" href="_images/remote-access-client.png"><img alt="Remote access login" class="align-center" src="_images/remote-access-client.png" style="width: 80%;" /></a>
+<p>After successful login you will be shown all the networks and gateways you have given access to, so now you will be able to connect/disconnect/refresh your connection to a gateway. Internet gateways are depicted with a globe icon.
+An internet gateway can be used to route all your traffic through the gateway, this is useful if you want to access the internet without exposing your public IP address. This behaves like a traditional VPN.</p>
+<a class="reference internal image-reference" href="_images/remote-access-client-2.png"><img alt="Connect and disconnect" class="align-center" src="_images/remote-access-client-2.png" style="width: 80%;" /></a>
+<p>The remote access client also has the following options:</p>
+<ul class="simple">
+<li><p>Refresh connection: This basically disconnects the current connection to the remote access gateway and then reconnects to it.</p></li>
+<li><p>Reload clients: This reloads the client data on the page, which can be useful if the data has changed since the page was last loaded.</p></li>
+</ul>
+<a class="reference internal image-reference" href="_images/remote-access-client-3.png"><img alt="Reload clients" class="align-center" src="_images/remote-access-client-3.png" style="width: 80%;" /></a>
+<ul class="simple">
+<li><p>Reset: This resets all connections to remote access gateways across all Netmaker servers and networks known to the client. This can be useful if you end up with a bad wireguard or network interface configuration or are having trouble connecting to a gateway. you should only use this option if Refresh connection does not work.</p></li>
+</ul>
+</section>
+<section id="using-netmaker-like-a-traditional-vpn">
+<h2>Using Netmaker like a traditional VPN<a class="headerlink" href="#using-netmaker-like-a-traditional-vpn" title="Permalink to this headline"></a></h2>
+<p>Some remote access gateways, specifically internet gateways (depicted by globe icon) can route all your traffic through the them. This can be useful if you want to access the internet without exposing your public IP address. This behaves like a traditional VPN. Internet gateways is a Pro-only feature.</p>
+</section>
+<section id="controlling-rac-user-sessions">
+<h2>Controlling RAC user sessions<a class="headerlink" href="#controlling-rac-user-sessions" title="Permalink to this headline"></a></h2>
+<p>On pro servers/tenants, the duration of a non-admin user’s remote session can be controlled.
+This can be done by setting <cite>RAC_AUTO_DISABLE</cite> (to <cite>true</cite>) and <cite>JWT_VALIDITY_DURATION</cite> (to an integer in seconds) environment variables on the server.</p>
+<p>With <cite>RAC_AUTO_DISABLE</cite> set to true, a non-admin user’s remote sessions will be disabled after the duration specified in <cite>JWT_VALIDITY_DURATION</cite> has elapsed.
+The user will have to relogin to enable their remote session again.</p>
+<p>NOTE: The <cite>JWT_VALIDITY_DURATION</cite> environment variable also configures all the JWT token validity duration for all users, regardless of whether <cite>RAC_AUTO_DISABLE</cite> is set to <cite>true</cite> or not.</p>
+</section>
+<section id="re-starting-the-service-daemon-process">
+<h2>(Re)Starting the service/daemon process<a class="headerlink" href="#re-starting-the-service-daemon-process" title="Permalink to this headline"></a></h2>
+<p>On very few occasion, the RAC daemon may not be running and will need to be restarted manually. There are two ways to resolve this:</p>
+<ol class="arabic simple">
+<li><p>Restart the computer. The daemon starts automatically on boot so restarting the computer will start the daemon on next startup.</p></li>
+<li><p>Manual restart. The exact procedure depends on your operating system.</p></li>
+</ol>
+<section id="manual-daemon-restart-on-windows">
+<h3>Manual daemon restart on Windows<a class="headerlink" href="#manual-daemon-restart-on-windows" title="Permalink to this headline"></a></h3>
+<ol class="arabic simple">
+<li><p>Open Task Manager.</p></li>
+<li><p>Go to the “Services” tab.</p></li>
+<li><p>Look for the “remote-client” service.</p></li>
+<li><p>Right-click on the service and select “Restart” or “Start”.</p></li>
+</ol>
+</section>
+<section id="manual-daemon-restart-on-linux">
+<h3>Manual daemon restart on Linux<a class="headerlink" href="#manual-daemon-restart-on-linux" title="Permalink to this headline"></a></h3>
+<p>On Linux, RAC daemon relies on systemd to manage the service. You can restart the service using the following command:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">sudo</span> <span class="n">systemctl</span> <span class="n">restart</span> <span class="n">remote</span><span class="o">-</span><span class="n">client</span>
+</pre></div>
+</div>
+</section>
+<section id="manual-daemon-restart-on-mac">
+<h3>Manual daemon restart on Mac<a class="headerlink" href="#manual-daemon-restart-on-mac" title="Permalink to this headline"></a></h3>
+<p>On Mac, RAC daemon relies on launchd to manage the service. You can restart the service using the following command:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">sudo</span> <span class="n">launchctl</span> <span class="n">stop</span> <span class="n">com</span><span class="o">.</span><span class="n">netmaker</span><span class="o">.</span><span class="n">remote</span><span class="o">-</span><span class="n">client</span>
+<span class="n">sudo</span> <span class="n">launchctl</span> <span class="n">start</span> <span class="n">com</span><span class="o">.</span><span class="n">netmaker</span><span class="o">.</span><span class="n">remote</span><span class="o">-</span><span class="n">client</span>
+</pre></div>
+</div>
+</section>
+</section>
+<section id="faqs-and-known-issues">
+<h2>FAQs and Known Issues<a class="headerlink" href="#faqs-and-known-issues" title="Permalink to this headline"></a></h2>
+<p><strong>Q: I am getting an error when trying to connect to a gateway.</strong></p>
+<p>A: Make sure that the gateway is running healthily and that you have access to it. Also try to “Refresh” and see if that fixes the issue. Otherwise “Reset” all connections and try again.</p>
+<p><strong>Q: Other WireGuard-based VPNs interfere with Netmaker RAC.</strong></p>
+<p>A: This is a known issue. If you have other WireGuard-based VPNs running on your machine, they may interfere with Netmaker RAC. You can try to disable them and see if that fixes the issue. Pro-tip: Netmaker Pro offers internet gateway functionality, so you can use it just as a traditional VPN. For more information, explore the <a class="reference external" href="https://www.netmaker.io/features/remote-access-gateway">Remote Access gateway feature</a>.</p>
+</section>
+</section>
+
+
+           </div>
+          </div>
+          <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
+        <a href="features.html" class="btn btn-neutral float-left" title="Features" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+        <a href="egress-gateway.html" class="btn btn-neutral float-right" title="egress" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>&#169; Copyright 2024, Netmaker Inc..</p>
+  </div>
+
+  Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    provided by <a href="https://readthedocs.org">Read the Docs</a>.
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>
