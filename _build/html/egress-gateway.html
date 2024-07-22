@@ -1,0 +1,250 @@
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" >
+<head>
+  <meta charset="utf-8" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>egress &mdash; Netmaker 0.24.3 documentation</title>
+      <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+      <link rel="stylesheet" href="_static/css/theme.css" type="text/css" />
+      <link rel="stylesheet" href="_static/custom.css" type="text/css" />
+      <link rel="stylesheet" href="_static/fonts.css" type="text/css" />
+      <link rel="stylesheet" href="_static/netmaker-custom.css" type="text/css" />
+  <!--[if lt IE 9]>
+    <script src="_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+        <script data-url_root="./" id="documentation_options" src="_static/documentation_options.js"></script>
+        <script src="_static/jquery.js"></script>
+        <script src="_static/underscore.js"></script>
+        <script src="_static/doctools.js"></script>
+    <script src="_static/js/theme.js"></script>
+    <link rel="author" title="About these documents" href="about.html" />
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+    <link rel="next" title="Remote Access Gateways and Clients" href="external-clients.html" />
+    <link rel="prev" title="User Management" href="user-management.html" /> 
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+
+          
+          
+          <a href="index.html" class="icon icon-home">
+            Netmaker
+          </a>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" aria-label="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="about.html">About</a></li>
+<li class="toctree-l1"><a class="reference internal" href="getting-started.html">Getting Started</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="features.html">Features</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="user-management.html">User Management</a></li>
+<li class="toctree-l2"><a class="reference internal" href="user-management.html#users-in-netmaker-professional">Users in Netmaker Professional</a></li>
+<li class="toctree-l2 current"><a class="current reference internal" href="#">egress</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#introduction">Introduction</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#configuring-an-egress-gateway">Configuring an Egress Gateway</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#use-cases">Use Cases</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#remote-access">1) Remote Access</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="#advanced-use-cases">Advanced Use Cases</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#egressing-external-clients">Egressing External Clients</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#configuring-egressing-external-clients">Configuring Egressing External Clients</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="external-clients.html">Remote Access Gateways and Clients</a></li>
+<li class="toctree-l2"><a class="reference internal" href="acls.html">ACLs</a></li>
+<li class="toctree-l2"><a class="reference internal" href="pro/index.html">Netmaker Professional</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="pro/index.html">Netmaker Professional</a></li>
+<li class="toctree-l1"><a class="reference internal" href="upgrades.html">Upgrades</a></li>
+<li class="toctree-l1"><a class="reference internal" href="how-to-guides.html">How-to-Guides</a></li>
+<li class="toctree-l1"><a class="reference internal" href="references.html">References</a></li>
+<li class="toctree-l1"><a class="reference internal" href="license.html">License</a></li>
+<li class="toctree-l1"><a class="reference internal" href="conduct.html">Code of Conduct</a></li>
+</ul>
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="index.html">Netmaker</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="index.html" class="icon icon-home" aria-label="Home"></a></li>
+          <li class="breadcrumb-item"><a href="features.html">Features</a></li>
+      <li class="breadcrumb-item active">egress</li>
+      <li class="wy-breadcrumbs-aside">
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  <section id="egress">
+<span id="id1"></span><h1>egress<a class="headerlink" href="#egress" title="Permalink to this headline"></a></h1>
+<section id="introduction">
+<h2>Introduction<a class="headerlink" href="#introduction" title="Permalink to this headline"></a></h2>
+<a class="reference internal image-reference" href="_images/egress1.png"><img alt="Gateway" class="align-center" src="_images/egress1.png" style="width: 80%;" /></a>
+<p>Netmaker allows your clients to reach external networks via an Egress Gateway. The Egress Gateway is a netclient which has been deployed to a server or router with access to a given subnet.</p>
+<p>In the Netmaker UI, that node is set as an “egress gateway.” Range(s) are specified which this node has access to. Once created, all clients (and all new ext clients) in the network will be able to reach those ranges via the gateway.</p>
+</section>
+<section id="configuring-an-egress-gateway">
+<h2>Configuring an Egress Gateway<a class="headerlink" href="#configuring-an-egress-gateway" title="Permalink to this headline"></a></h2>
+<p>Configuring an Egress Gateway is very straight forward. As a prerequisite, you must know what you are trying to access remotely. For instance:</p>
+<ul class="simple">
+<li><p>a VPC</p></li>
+<li><p>a Kubernetes network</p></li>
+<li><p>a home network</p></li>
+<li><p>an office network</p></li>
+<li><p>a data center</p></li>
+</ul>
+<p>After you have determined this, you must next deploy a netclient in a compatible location where the network is accessible. For instance, a Linux server or router in the office, or a Kubernetes worker node. This machine should be stable and relatively static (not expected to change its IP frequently or shut down unexpectedly).</p>
+<p>Once you have determined the subnet, and deployed your netclient, you can go to your Netmaker UI and set the node as a gateway. click on the network on the sidebar and navigate to the egress section.</p>
+<a class="reference internal image-reference" href="_images/egress7.png"><img alt="Gateway" class="align-center" src="_images/egress7.png" style="width: 80%;" /></a>
+<p>At this point you will choose your selected host to use as an egress. You can choose if you would like to use NAT or not with the switch. You can put the selected CIDR for your egress range(s) in the field. click the add range button to add more egress ranges for the host. The interface is automatically chosen and will not be shown in this window. With everything filled out, click the create button.</p>
+<a class="reference internal image-reference" href="_images/ui-6.png"><img alt="Gateway" class="align-center" src="_images/ui-6.png" style="width: 80%;" /></a>
+<p>Netmaker will set either iptables or nftables rules on the node depending on which one you have installed on your client. This will then implement these rules, allowing it to route traffic from the network to the specified range(s).</p>
+</section>
+<section id="use-cases">
+<h2>Use Cases<a class="headerlink" href="#use-cases" title="Permalink to this headline"></a></h2>
+<section id="remote-access">
+<h3>1) Remote Access<a class="headerlink" href="#remote-access" title="Permalink to this headline"></a></h3>
+<p>A common scenario would be to combine this with a “Remote Access Gateway” to create a simple method for accessing a home or office network. Such a setup would typically have only two nodes: the remote access and egress gateways. The Remote Access Gateway should usually be globally accessible, which makes the Netmaker server itself a good candidate. This means you need only the Netmaker server as the Remote Access Gateway, and one additional machine (in the private network you wish to reach), as the Egress.</p>
+<a class="reference internal image-reference" href="_images/egress2.png"><img alt="Gateway" class="align-center" src="_images/egress2.png" style="width: 80%;" /></a>
+<p>In some scenarios, a single node will act as both remote access gateway and egress! For instance, you can enable acess to a VPC using your Netmaker server, deployed with a public IP. Traffic comes in over the public IP (encrypted of course) and then routes to the VPC subnet via the egress gateway.</p>
+<a class="reference internal image-reference" href="_images/egress3.png"><img alt="Gateway" class="align-center" src="_images/egress3.png" style="width: 50%;" /></a>
+</section>
+</section>
+<section id="advanced-use-cases">
+<h2>Advanced Use Cases<a class="headerlink" href="#advanced-use-cases" title="Permalink to this headline"></a></h2>
+<ol class="arabic">
+<li><p>Segmenting Traffic Flow Through Egress Gateways</p>
+<p>User will need to add these additional routing rules on the egress machine to segment traffic to multiple egress ranges as desired when on multiple networks</p>
+</li>
+</ol>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">iptables</span> <span class="o">-</span><span class="n">t</span> <span class="nb">filter</span> <span class="o">-</span><span class="n">N</span> <span class="n">netmakeregress</span>
+<span class="n">iptables</span> <span class="o">-</span><span class="n">t</span> <span class="nb">filter</span> <span class="o">-</span><span class="n">I</span> <span class="n">FORWARD</span> <span class="o">-</span><span class="n">i</span> <span class="n">netmaker</span> <span class="o">-</span><span class="n">d</span> <span class="n">egressGwRangeA</span><span class="p">,</span><span class="n">egressGwRangeB</span> <span class="o">-</span><span class="n">j</span> <span class="n">netmakeregress</span>
+
+<span class="n">iptables</span> <span class="o">-</span><span class="n">t</span> <span class="nb">filter</span> <span class="o">-</span><span class="n">I</span> <span class="n">netmakeregress</span> <span class="o">-</span><span class="n">s</span> <span class="n">networkRangeA</span> <span class="o">-</span><span class="n">d</span> <span class="n">egressRangeA</span> <span class="o">-</span><span class="n">j</span> <span class="n">ACCEPT</span>
+<span class="n">iptables</span> <span class="o">-</span><span class="n">t</span> <span class="nb">filter</span> <span class="o">-</span><span class="n">I</span> <span class="n">netmakeregress</span> <span class="o">-</span><span class="n">s</span> <span class="n">networkRangeB</span> <span class="o">-</span><span class="n">d</span> <span class="n">egressRangeB</span> <span class="o">-</span><span class="n">j</span> <span class="n">ACCEPT</span>
+<span class="n">iptables</span> <span class="o">-</span><span class="n">t</span> <span class="nb">filter</span> <span class="o">-</span><span class="n">A</span> <span class="n">netmakeregress</span> <span class="o">-</span><span class="n">j</span> <span class="n">DROP</span>
+
+<span class="c1"># NAT Rules</span>
+
+<span class="n">iptables</span> <span class="o">-</span><span class="n">t</span> <span class="n">nat</span> <span class="o">-</span><span class="n">I</span> <span class="n">POSTROUTING</span> <span class="o">-</span><span class="n">s</span> <span class="n">networkRangeA</span> <span class="o">-</span><span class="n">d</span> <span class="n">egressGwRangeA</span> <span class="o">-</span><span class="n">j</span> <span class="n">MASQUERADE</span>
+
+<span class="n">iptables</span> <span class="o">-</span><span class="n">t</span> <span class="n">nat</span> <span class="o">-</span><span class="n">I</span> <span class="n">POSTROUTING</span> <span class="o">-</span><span class="n">s</span> <span class="n">egressGwRangeA</span> <span class="o">-</span><span class="n">d</span> <span class="n">networkRangeA</span> <span class="o">-</span><span class="n">j</span> <span class="n">MASQUERADE</span>
+
+<span class="n">iptables</span> <span class="o">-</span><span class="n">t</span> <span class="n">nat</span> <span class="o">-</span><span class="n">I</span> <span class="n">POSTROUTING</span> <span class="o">-</span><span class="n">s</span> <span class="n">networkRangeB</span> <span class="o">-</span><span class="n">d</span> <span class="n">egressGwRangeB</span> <span class="o">-</span><span class="n">j</span> <span class="n">MASQUERADE</span>
+
+<span class="n">iptables</span> <span class="o">-</span><span class="n">t</span> <span class="n">nat</span> <span class="o">-</span><span class="n">I</span> <span class="n">POSTROUTING</span> <span class="o">-</span><span class="n">s</span> <span class="n">egressGwRangeB</span> <span class="o">-</span><span class="n">d</span> <span class="n">networkRangeB</span>  <span class="o">-</span><span class="n">j</span> <span class="n">MASQUERADE</span>
+</pre></div>
+</div>
+<ol class="arabic" start="2">
+<li><p>IPv6 NAT Masquerading for Egress Gateways</p>
+<p>Currently IPv6 Egress Gateways are not working because the default kernel builds for most common linux distributions do not support ipv6 masquerading. Custom linux kernel needs to be built with flag for enabling ipv6 masquerading to get ipv6 egress gateways working.</p>
+<p>Some online resources about the topic:</p>
+</li>
+</ol>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>https://superuser.com/questions/1751062/ipv6-masquerading-on-linux
+
+https://www.kernelconfig.io/config_nf_nat_masquerade_ipv6?q=&amp;kernelversion=5.15.116&amp;arch=x86
+
+https://www.reddit.com/r/PFSENSE/comments/vb4r3s/ip6_masquerading
+</pre></div>
+</div>
+</section>
+<section id="egressing-external-clients">
+<h2>Egressing External Clients<a class="headerlink" href="#egressing-external-clients" title="Permalink to this headline"></a></h2>
+<p>Unmanaged external clients that are directly connected to a Remote Access Gateway can also act as egressing machines. The idea is the same as egress gateways. The only difference is that Netclient is necessary with egress gateways, whilst only Wireguard is needed with egressing external clients. This feature is provisioned for situations or scenarios where installation of Netclient is not ideal or even possible. For example most VPN routers support WireGuard, but they are available only as plugins that are tailormade or closely coupled with the router’s firmware or user interface.
+While there are ways to make Netclient work for some routers, the integration could get cumbersome, obsolete, or compromising. Of course this feature is also applicable for simple or ad-hoc networking purposes so long as the external client supports iptables and IP forwarding.</p>
+<p>At the time of this writing, this feature only supports Linux-based external clients. But the remote machines can be anything, provided they are in the same local network as one of the egressing external client’s network interface.</p>
+<section id="configuring-egressing-external-clients">
+<h3>Configuring Egressing External Clients<a class="headerlink" href="#configuring-egressing-external-clients" title="Permalink to this headline"></a></h3>
+<p>The configuration is pretty much the same as Egress Gateways. First, make sure that iptables is installed and IP forwarding is enabled. Please refer to your distro’s documentation on how to do this. For Ubuntu you might do:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="c1">#update</span>
+<span class="n">apt</span><span class="o">-</span><span class="n">get</span> <span class="n">update</span>
+
+<span class="c1">#install iptables</span>
+<span class="n">apt</span><span class="o">-</span><span class="n">get</span> <span class="n">install</span> <span class="n">iptables</span>
+
+<span class="c1">#enable IP forwarding</span>
+<span class="n">sysctl</span> <span class="o">-</span><span class="n">w</span> <span class="n">net</span><span class="o">.</span><span class="n">ipv4</span><span class="o">.</span><span class="n">ip_forward</span><span class="o">=</span><span class="mi">1</span>
+</pre></div>
+</div>
+<p>You can then responsibly specify the applicable egress ranges on the external client’s VPN configuration, specifically in the “Additional Addresses” field as shown in the image below. It goes without saying that you can specify single addresses such as <cite>172.16.1.2/32</cite>.</p>
+<a class="reference internal image-reference" href="_images/integration-config-additional-addresses.jpg"><img alt="Client additional IP addresses range" class="align-center" src="_images/integration-config-additional-addresses.jpg" style="width: 80%;" /></a>
+<p>Your Netmaker server will then pick up the egress ranges and propagate it to all the other managed devices in the netmaker network. And of course you can edit them anytime when necessary. For more information on how to create or edit client VPN configurations, please refer to these links:</p>
+<blockquote>
+<div><ul class="simple">
+<li><p><a class="reference external" href="https://docs.netmaker.io/external-clients.html#adding-clients-to-a-gateway">https://docs.netmaker.io/external-clients.html#adding-clients-to-a-gateway</a></p></li>
+<li><p><a class="reference external" href="https://docs.netmaker.io/integrating-non-native-devices.html#generating-a-wireguard-configuration-file-on-remote-access-gateway">https://docs.netmaker.io/integrating-non-native-devices.html#generating-a-wireguard-configuration-file-on-remote-access-gateway</a></p></li>
+</ul>
+</div></blockquote>
+<p>In some cases you might need to add POSTROUTING rules. In Ubuntu, you might do:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="c1">#get the name of the specific network interface of the egressing client machine</span>
+<span class="c1"># that is associated with the egress ranges that you have specified</span>
+<span class="n">ip</span> <span class="n">a</span>
+
+<span class="c1">#add the necessary POSTROUTING rule, say the interface name is `eth1`</span>
+<span class="n">iptables</span> <span class="o">-</span><span class="n">t</span> <span class="n">nat</span> <span class="o">-</span><span class="n">I</span> <span class="n">POSTROUTING</span> <span class="o">-</span><span class="n">o</span> <span class="n">eth1</span> <span class="o">-</span><span class="n">j</span> <span class="n">MASQUERADE</span>
+</pre></div>
+</div>
+</section>
+</section>
+</section>
+
+
+           </div>
+          </div>
+          <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
+        <a href="user-management.html" class="btn btn-neutral float-left" title="User Management" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+        <a href="external-clients.html" class="btn btn-neutral float-right" title="Remote Access Gateways and Clients" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>&#169; Copyright 2024, Netmaker Inc..</p>
+  </div>
+
+  Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    provided by <a href="https://readthedocs.org">Read the Docs</a>.
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>

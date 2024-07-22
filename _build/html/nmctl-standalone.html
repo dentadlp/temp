@@ -1,0 +1,241 @@
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" >
+<head>
+  <meta charset="utf-8" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>NMCTL - how to use netmaker from command line &mdash; Netmaker 0.24.3 documentation</title>
+      <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+      <link rel="stylesheet" href="_static/css/theme.css" type="text/css" />
+      <link rel="stylesheet" href="_static/custom.css" type="text/css" />
+      <link rel="stylesheet" href="_static/fonts.css" type="text/css" />
+      <link rel="stylesheet" href="_static/netmaker-custom.css" type="text/css" />
+  <!--[if lt IE 9]>
+    <script src="_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+        <script data-url_root="./" id="documentation_options" src="_static/documentation_options.js"></script>
+        <script src="_static/jquery.js"></script>
+        <script src="_static/underscore.js"></script>
+        <script src="_static/doctools.js"></script>
+    <script src="_static/js/theme.js"></script>
+    <link rel="author" title="About these documents" href="about.html" />
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+    <link rel="next" title="FAQ" href="support.html" />
+    <link rel="prev" title="NMCTL" href="nmctl.html" /> 
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+
+          
+          
+          <a href="index.html" class="icon icon-home">
+            Netmaker
+          </a>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" aria-label="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="about.html">About</a></li>
+<li class="toctree-l1"><a class="reference internal" href="getting-started.html">Getting Started</a></li>
+<li class="toctree-l1"><a class="reference internal" href="features.html">Features</a></li>
+<li class="toctree-l1"><a class="reference internal" href="pro/index.html">Netmaker Professional</a></li>
+<li class="toctree-l1"><a class="reference internal" href="upgrades.html">Upgrades</a></li>
+<li class="toctree-l1"><a class="reference internal" href="how-to-guides.html">How-to-Guides</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="references.html">References</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="references.html#ui">UI</a></li>
+<li class="toctree-l2"><a class="reference internal" href="references.html#api">API</a></li>
+<li class="toctree-l2"><a class="reference internal" href="references.html#netclient">Netclient</a></li>
+<li class="toctree-l2 current"><a class="reference internal" href="references.html#nmctl">NMCTL</a><ul class="current">
+<li class="toctree-l3"><a class="reference internal" href="nmctl.html">NMCTL</a></li>
+<li class="toctree-l3 current"><a class="current reference internal" href="#">NMCTL - how to use netmaker from command line</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#assumptions">Assumptions</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#setup-superadmin-user">Setup superadmin user</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#normal-operations-by-user">Normal Operations by user</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#set-username-password">Set username/password</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#set-user-context">Set User Context</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#create-network">Create Network</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#create-enrollment-key">Create Enrollment Key</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#join-network">Join network</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="references.html#faq">FAQ</a></li>
+<li class="toctree-l2"><a class="reference internal" href="references.html#troubleshooting">Troubleshooting</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="license.html">License</a></li>
+<li class="toctree-l1"><a class="reference internal" href="conduct.html">Code of Conduct</a></li>
+</ul>
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="index.html">Netmaker</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="index.html" class="icon icon-home" aria-label="Home"></a></li>
+          <li class="breadcrumb-item"><a href="references.html">References</a></li>
+      <li class="breadcrumb-item active">NMCTL - how to use netmaker from command line</li>
+      <li class="wy-breadcrumbs-aside">
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  <section id="nmctl-how-to-use-netmaker-from-command-line">
+<h1>NMCTL - how to use netmaker from command line<a class="headerlink" href="#nmctl-how-to-use-netmaker-from-command-line" title="Permalink to this headline"></a></h1>
+<p>a brief guide to using netmaker from the command line (without the UI)</p>
+<section id="assumptions">
+<h2>Assumptions<a class="headerlink" href="#assumptions" title="Permalink to this headline"></a></h2>
+<ol class="arabic simple">
+<li><p>using bash shell</p></li>
+<li><p>nmctl and jq have been installed</p></li>
+<li><p>netmaker server has been set up at example.com. This can be a SaaS (managed) tenant as well.</p></li>
+</ol>
+</section>
+<section id="setup-superadmin-user">
+<h2>Setup superadmin user<a class="headerlink" href="#setup-superadmin-user" title="Permalink to this headline"></a></h2>
+<section id="set-base-domain">
+<h3>Set base domain<a class="headerlink" href="#set-base-domain" title="Permalink to this headline"></a></h3>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">export</span> <span class="n">NN_DOMAIN</span><span class="o">=</span><span class="n">example</span><span class="o">.</span><span class="n">com</span>
+</pre></div>
+</div>
+</section>
+<section id="create-superadmin-user">
+<h3>Create SuperAdmin User<a class="headerlink" href="#create-superadmin-user" title="Permalink to this headline"></a></h3>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">curl</span> <span class="o">--</span><span class="n">location</span> <span class="s1">&#39;https://api.$NM_DOMAIN/api/users/adm/createsuperadmin&#39;</span> \
+<span class="o">--</span><span class="n">header</span> <span class="s1">&#39;Content-Type: application/json&#39;</span> \
+<span class="o">--</span><span class="n">data</span> <span class="s1">&#39;{</span>
+<span class="s2">&quot;username&quot;</span><span class="p">:</span><span class="s2">&quot;superadmin&quot;</span><span class="p">,</span>
+<span class="s2">&quot;password&quot;</span><span class="p">:</span><span class="s2">&quot;NetmakerIsAwe$ome&quot;</span>
+<span class="p">}</span><span class="s1">&#39;</span>
+</pre></div>
+</div>
+</section>
+<section id="set-context">
+<h3>Set Context<a class="headerlink" href="#set-context" title="Permalink to this headline"></a></h3>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>nmctl context set commandline --endpoint https://api.$NM_DOMAIN --username $USER --password $PASSWORD
+</pre></div>
+</div>
+</section>
+<section id="create-admin-user">
+<h3>Create Admin User<a class="headerlink" href="#create-admin-user" title="Permalink to this headline"></a></h3>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>nmctl user create --admin --name $USER --password $PASSWORD
+</pre></div>
+</div>
+</section>
+<section id="create-normal-user">
+<h3>Create Normal User<a class="headerlink" href="#create-normal-user" title="Permalink to this headline"></a></h3>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">nmctl</span> <span class="n">user</span> <span class="n">create</span> <span class="o">--</span><span class="n">name</span> <span class="o">&lt;</span><span class="n">user</span><span class="o">&gt;</span> <span class="o">--</span><span class="n">password</span> <span class="o">&lt;</span><span class="n">user</span><span class="o">-</span><span class="n">password</span><span class="o">&gt;</span>
+</pre></div>
+</div>
+</section>
+</section>
+<section id="normal-operations-by-user">
+<h2>Normal Operations by user<a class="headerlink" href="#normal-operations-by-user" title="Permalink to this headline"></a></h2>
+<p><em>assume that users have been created by superadmin</em></p>
+</section>
+<section id="set-username-password">
+<h2>Set username/password<a class="headerlink" href="#set-username-password" title="Permalink to this headline"></a></h2>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">export</span> <span class="n">USER</span><span class="o">=&lt;</span><span class="n">user</span><span class="o">&gt;</span>
+<span class="n">export</span> <span class="n">PASSWORD</span><span class="o">=&lt;</span><span class="n">user</span><span class="o">-</span><span class="n">password</span><span class="o">&gt;</span>
+</pre></div>
+</div>
+</section>
+<section id="set-user-context">
+<h2>Set User Context<a class="headerlink" href="#set-user-context" title="Permalink to this headline"></a></h2>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>nmctl context set commandline --endpoint https://api.$NM_DOMAIN --username $USER --password $PASSWORD
+nmctl context use commandline
+</pre></div>
+</div>
+</section>
+<section id="create-network">
+<h2>Create Network<a class="headerlink" href="#create-network" title="Permalink to this headline"></a></h2>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">nmctl</span> <span class="n">network</span> <span class="n">create</span> <span class="o">--</span><span class="n">name</span> <span class="n">mynetwork</span> <span class="o">--</span><span class="n">ip4v_addr</span> <span class="mf">10.10.10.0</span><span class="o">/</span><span class="mi">24</span>
+</pre></div>
+</div>
+</section>
+<section id="create-enrollment-key">
+<h2>Create Enrollment Key<a class="headerlink" href="#create-enrollment-key" title="Permalink to this headline"></a></h2>
+<p><em>create one of Unlimited/LimitedUse/Expiration</em></p>
+<section id="unlimited">
+<h3>Unlimited<a class="headerlink" href="#unlimited" title="Permalink to this headline"></a></h3>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>export KEY=$(nmctl enrollment_key create --network mynetwork --unlimited | jq .token)
+</pre></div>
+</div>
+</section>
+<section id="limited-use-3">
+<h3>Limited Use (3)<a class="headerlink" href="#limited-use-3" title="Permalink to this headline"></a></h3>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>export KEY=$(nmctl enrollment_key create --network mynetwork --uses 3 | jq .token)
+</pre></div>
+</div>
+</section>
+<section id="with-expiration-time-2-days">
+<h3>With Expiration Time (2 days)<a class="headerlink" href="#with-expiration-time-2-days" title="Permalink to this headline"></a></h3>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>export EXPIRES=$(date -d &quot;+2 days&quot; +$s)
+export KEY=$(nmctl enrollment_key create --network mynetwork --expires $EXPIRES | jq .token)
+</pre></div>
+</div>
+</section>
+</section>
+<section id="join-network">
+<h2>Join network<a class="headerlink" href="#join-network" title="Permalink to this headline"></a></h2>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>sudo netclient join -t $KEY
+</pre></div>
+</div>
+</section>
+</section>
+
+
+           </div>
+          </div>
+          <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
+        <a href="nmctl.html" class="btn btn-neutral float-left" title="NMCTL" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+        <a href="support.html" class="btn btn-neutral float-right" title="FAQ" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>&#169; Copyright 2024, Netmaker Inc..</p>
+  </div>
+
+  Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    provided by <a href="https://readthedocs.org">Read the Docs</a>.
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>

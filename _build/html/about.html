@@ -1,0 +1,182 @@
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" >
+<head>
+  <meta charset="utf-8" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>About &mdash; Netmaker 0.24.3 documentation</title>
+      <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+      <link rel="stylesheet" href="_static/css/theme.css" type="text/css" />
+      <link rel="stylesheet" href="_static/custom.css" type="text/css" />
+      <link rel="stylesheet" href="_static/fonts.css" type="text/css" />
+      <link rel="stylesheet" href="_static/netmaker-custom.css" type="text/css" />
+  <!--[if lt IE 9]>
+    <script src="_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+        <script data-url_root="./" id="documentation_options" src="_static/documentation_options.js"></script>
+        <script src="_static/jquery.js"></script>
+        <script src="_static/underscore.js"></script>
+        <script src="_static/doctools.js"></script>
+    <script src="_static/js/theme.js"></script>
+    <link rel="author" title="About these documents" href="#" />
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+    <link rel="next" title="Architecture" href="architecture.html" />
+    <link rel="prev" title="Welcome to the Netmaker Documentation" href="index.html" /> 
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+
+          
+          
+          <a href="index.html" class="icon icon-home">
+            Netmaker
+          </a>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" aria-label="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <ul class="current">
+<li class="toctree-l1 current"><a class="current reference internal" href="#">About</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#what-is-netmaker">What is Netmaker?</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#how-does-netmaker-work">How Does Netmaker Work?</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#use-cases-for-netmaker">Use Cases for Netmaker</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#architecture">Architecture</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="architecture.html">Architecture</a></li>
+<li class="toctree-l3"><a class="reference internal" href="architecture.html#core-concepts">Core Concepts</a></li>
+<li class="toctree-l3"><a class="reference internal" href="architecture.html#components">Components</a></li>
+<li class="toctree-l3"><a class="reference internal" href="architecture.html#technical-process">Technical Process</a></li>
+<li class="toctree-l3"><a class="reference internal" href="architecture.html#compatible-systems-for-netclient">Compatible Systems for Netclient</a></li>
+<li class="toctree-l3"><a class="reference internal" href="architecture.html#limitations">Limitations</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="getting-started.html">Getting Started</a></li>
+<li class="toctree-l1"><a class="reference internal" href="features.html">Features</a></li>
+<li class="toctree-l1"><a class="reference internal" href="pro/index.html">Netmaker Professional</a></li>
+<li class="toctree-l1"><a class="reference internal" href="upgrades.html">Upgrades</a></li>
+<li class="toctree-l1"><a class="reference internal" href="how-to-guides.html">How-to-Guides</a></li>
+<li class="toctree-l1"><a class="reference internal" href="references.html">References</a></li>
+<li class="toctree-l1"><a class="reference internal" href="license.html">License</a></li>
+<li class="toctree-l1"><a class="reference internal" href="conduct.html">Code of Conduct</a></li>
+</ul>
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="index.html">Netmaker</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="index.html" class="icon icon-home" aria-label="Home"></a></li>
+      <li class="breadcrumb-item active">About</li>
+      <li class="wy-breadcrumbs-aside">
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  <section id="about">
+<h1>About<a class="headerlink" href="#about" title="Permalink to this headline"></a></h1>
+<a class="reference internal image-reference" href="_images/netmaker-simple.png"><img alt="Netmaker Architecture Diagram" class="align-center" src="_images/netmaker-simple.png" style="width: 60%;" /></a>
+<section id="what-is-netmaker">
+<h2>What is Netmaker?<a class="headerlink" href="#what-is-netmaker" title="Permalink to this headline"></a></h2>
+<p>Netmaker is a tool for creating and managing virtual overlay networks. If you have at least two machines with internet access that you need to connect with a secure tunnel, Netmaker is for you. If you have thousands of servers spread across multiple locations, data centers, or clouds, Netmaker is also for you. Netmaker connects machines securely, wherever they are.</p>
+<a class="reference internal image-reference" href="_images/mesh-diagram.png"><img alt="WireGuard Mesh" class="align-center" src="_images/mesh-diagram.png" style="width: 50%;" /></a>
+<p>Netmaker takes these machines and creates a flat network so that they can all talk to each other easily and securely.
+If you’re familiar with AWS, it’s like a VPC but made up of arbitrary computers. From the machine’s perspective, all these other machines are in the same neighborhood, even if they’re spread all over the world.</p>
+<p>Beyond creating a flat network, Netmaker introduces Remote Access Gateway and Egress, which are gateways that control the flow of traffic into and out of the network. Netmaker also has ACLs, which control exactly which machines can reach each other. The end result is you can create much more complex networks than a simple mesh.</p>
+<a class="reference internal image-reference" href="_images/netmaker-advanced.png"><img alt="Netmaker Architecture Diagram" class="align-center" src="_images/netmaker-advanced.png" style="width: 80%;" /></a>
+<p>Netmaker has many similarities to Tailscale, ZeroTier, and Nebula. What makes Netmaker different is the speed and flexibility. Netmaker is faster because it uses kernel WireGuard. It is more dynamic because the server and agents are fully configurable, which lets you handle all sorts of different use cases. And, of course, you can also self-host Netmaker, which gives you complete control of your network traffic.</p>
+</section>
+<section id="how-does-netmaker-work">
+<h2>How Does Netmaker Work?<a class="headerlink" href="#how-does-netmaker-work" title="Permalink to this headline"></a></h2>
+<p>Netmaker relies on WireGuard to create tunnels between machines. At its core, Netmaker is managing WireGuard across machines to create sensible networks. Technically, Netmaker is two things:</p>
+<ul class="simple">
+<li><p>the admin server, called Netmaker</p></li>
+<li><p>the agent, called Netclient</p></li>
+</ul>
+<p>As the network manager, you interact with the server to create and manage networks and devices. The server holds configurations for these networks and devices and pushes updates to the agents (netclient) over a message queue.</p>
+<p>The netclient is installed on any machine you would like to add to a given network, whether that machine is a VM, Server, Kubernetes node, or IoT device. The netclient subscribes to the MQ broker, and the server tells it how to configure WireGuard. The client will let the server know when any local changes (like ip address, port) should be pushed out to the other clients. By doing this across many machines simultaneously, we create fully dynamic and configurable virtual networks.</p>
+<p>The Netmaker server does not typically route traffic, which would be a hub-and-spoke model (much slower). Instead, Netmaker just tells the machines on the network how they can reach each other directly. This is called a <em>full mesh</em> network and is much faster. Even if the server goes down, as long as none of the existing machines change substantially, your network will still run just fine.</p>
+</section>
+<section id="use-cases-for-netmaker">
+<h2>Use Cases for Netmaker<a class="headerlink" href="#use-cases-for-netmaker" title="Permalink to this headline"></a></h2>
+<p>There are many use cases for Netmaker. In fact, you could probably be using it right now. Because of Netmaker’s extreme speed, there is almost no cost to putting a Netmaker overlay network on top of any existing Network. The question becomes, why not use Netmaker? You’ve already got the machines; why not encrypt the traffic and make your network dynamic?</p>
+<p>This list is not all-encompassing but provides a sample of how many users use Netmaker in production today. Guided setup for many of these use cases can be found in the <a class="reference internal" href="usage.html"><span class="doc">Using Netmaker</span></a> documentation.</p>
+<blockquote>
+<div><ol class="arabic simple" start="0">
+<li><p>Automate the creation of a large WireGuard-based network</p></li>
+<li><p>Create a flat, secure network between multiple environments (VPCs, clouds, data centers)</p></li>
+<li><p>Secure access to a home or office network</p></li>
+<li><p>Provide remote access to resources like an AWS VPC, data center, or K8S cluster</p></li>
+<li><p>Create distributed, cross-cloud Kubernetes clusters or database clusters</p></li>
+<li><p>Manage a secure mesh of IoT devices</p></li>
+</ol>
+</div></blockquote>
+</section>
+<section id="architecture">
+<h2>Architecture<a class="headerlink" href="#architecture" title="Permalink to this headline"></a></h2>
+<div class="toctree-wrapper compound">
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="architecture.html">Architecture</a></li>
+<li class="toctree-l1"><a class="reference internal" href="architecture.html#core-concepts">Core Concepts</a></li>
+<li class="toctree-l1"><a class="reference internal" href="architecture.html#components">Components</a></li>
+<li class="toctree-l1"><a class="reference internal" href="architecture.html#technical-process">Technical Process</a></li>
+<li class="toctree-l1"><a class="reference internal" href="architecture.html#compatible-systems-for-netclient">Compatible Systems for Netclient</a></li>
+<li class="toctree-l1"><a class="reference internal" href="architecture.html#limitations">Limitations</a></li>
+</ul>
+</div>
+</section>
+</section>
+
+
+           </div>
+          </div>
+          <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
+        <a href="index.html" class="btn btn-neutral float-left" title="Welcome to the Netmaker Documentation" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+        <a href="architecture.html" class="btn btn-neutral float-right" title="Architecture" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>&#169; Copyright 2024, Netmaker Inc..</p>
+  </div>
+
+  Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    provided by <a href="https://readthedocs.org">Read the Docs</a>.
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>
