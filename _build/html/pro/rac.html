@@ -1,0 +1,263 @@
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" >
+<head>
+  <meta charset="utf-8" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Netmaker Remote Access Client (RAC) &mdash; Netmaker 0.24.3 documentation</title>
+      <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+      <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
+      <link rel="stylesheet" href="../_static/custom.css" type="text/css" />
+      <link rel="stylesheet" href="../_static/fonts.css" type="text/css" />
+      <link rel="stylesheet" href="../_static/netmaker-custom.css" type="text/css" />
+  <!--[if lt IE 9]>
+    <script src="../_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+        <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
+        <script src="../_static/jquery.js"></script>
+        <script src="../_static/underscore.js"></script>
+        <script src="../_static/doctools.js"></script>
+    <script src="../_static/js/theme.js"></script>
+    <link rel="author" title="About these documents" href="../about.html" />
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="FailOver Servers" href="pro-failovers.html" />
+    <link rel="prev" title="UI Branding" href="pro-branding.html" /> 
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+
+          
+          
+          <a href="../index.html">
+            
+          </a>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" aria-label="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../about.html">About</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../getting-started.html">Getting Started</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../features.html">Features</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="index.html">Netmaker Professional</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="pro-setup.html">Netmaker Professional Setup</a></li>
+<li class="toctree-l2"><a class="reference internal" href="pro-users.html">Users in Netmaker Professional</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../oauth.html">Integrating OAuth</a></li>
+<li class="toctree-l2"><a class="reference internal" href="pro-relay-server.html">Relay Servers</a></li>
+<li class="toctree-l2"><a class="reference internal" href="pro-metrics.html">Netmaker Professional Metrics</a></li>
+<li class="toctree-l2"><a class="reference internal" href="pro-branding.html">UI Branding</a></li>
+<li class="toctree-l2 current"><a class="current reference internal" href="#">Netmaker Remote Access Client (RAC)</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#download-installation">Download/Installation</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#quick-start">Quick Start</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#using-the-remote-access-client-rac">Using the Remote Access Client (RAC)</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#using-netmaker-like-a-traditional-vpn">Using Netmaker like a traditional VPN</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#controlling-rac-user-sessions">Controlling RAC user sessions</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#re-starting-the-service-daemon-process">(Re)Starting the service/daemon process</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#faqs-and-known-issues">FAQs and Known Issues</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="pro-failovers.html">FailOver Servers</a></li>
+<li class="toctree-l2"><a class="reference internal" href="internet-gateways.html">Internet Gateways</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../upgrades.html">Upgrades</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../how-to-guides.html">How-to-Guides</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../references.html">References</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../license.html">License</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../conduct.html">Code of Conduct</a></li>
+</ul>
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../index.html">Netmaker</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="../index.html" class="icon icon-home" aria-label="Home"></a></li>
+          <li class="breadcrumb-item"><a href="../features.html">Features</a></li>
+          <li class="breadcrumb-item"><a href="index.html">Netmaker Professional</a></li>
+      <li class="breadcrumb-item active">Netmaker Remote Access Client (RAC)</li>
+      <li class="wy-breadcrumbs-aside">
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  <section id="netmaker-remote-access-client-rac">
+<h1>Netmaker Remote Access Client (RAC)<a class="headerlink" href="#netmaker-remote-access-client-rac" title="Permalink to this headline"></a></h1>
+<p>The Netmaker Remote Access Client, RAC for short is a GUI tool for easily getting access to a Netmaker network.
+RAC is mostly suited for offsite machines that need access to a Netmaker network. It supports Windows, Mac, Linux and mobile (iOS and Android).</p>
+<section id="download-installation">
+<h2>Download/Installation<a class="headerlink" href="#download-installation" title="Permalink to this headline"></a></h2>
+<p><strong>For Mac:</strong></p>
+<p>You can download the M1 or Intel Mac installer from our fileserver link (<a class="reference external" href="https://fileserver.netmaker.io/releases/download/latest">https://fileserver.netmaker.io/releases/download/latest</a>) run it. Then open the GUI to start using RAC!</p>
+<hr class="docutils" />
+<p><strong>For Windows:</strong></p>
+<p>You can download the <cite>remoteclientbundle.exe</cite> bundle (recommended as this install wireguard and other dependencies) or <cite>remote-access-client_86.msi</cite> installer (MSI doesnt install any dependencies) and run it to install on your windows machine. You can then open the GUI to start using RAC!
+Download link: <a class="reference external" href="https://fileserver.netmaker.io/releases/download/latest/remoteclientbundle.exe">https://fileserver.netmaker.io/releases/download/latest/remoteclientbundle.exe</a></p>
+<hr class="docutils" />
+<p>For mobile devices, you can download the app from the respective app stores.</p>
+<p><strong>Google Play Store (Android):</strong></p>
+<p>Scan the QR code</p>
+<a class="reference internal image-reference" href="../_images/netmaker-rac-android.png"><img alt="Netmaker RAC on Google Play Store" class="align-left" src="../_images/netmaker-rac-android.png" style="width: 400px;" /></a>
+<p>Or use the following link:
+<a class="reference external" href="https://play.google.com/store/apps/details?id=com.net.netmaker&amp;pli=1&amp;utm_source=docs">https://play.google.com/store/apps/details?id=com.net.netmaker&amp;pli=1&amp;utm_source=docs</a></p>
+<p><strong>Apple App Store (iOS):</strong></p>
+<p>Scan the QR code</p>
+<a class="reference internal image-reference" href="../_images/netmaker-rac-apple.png"><img alt="Netmaker RAC on Apple App Store" class="align-left" src="../_images/netmaker-rac-apple.png" style="width: 400px;" /></a>
+<p>Or use the following link:
+<a class="reference external" href="https://apps.apple.com/us/app/netmaker-rac/id6479694220?itsct=apps_box_badge&amp;amp;itscg=30200">https://apps.apple.com/us/app/netmaker-rac/id6479694220?itsct=apps_box_badge&amp;amp;itscg=30200</a></p>
+<hr class="docutils" />
+<p><strong>Debian/Ubuntu Linux:</strong></p>
+<p>You can also use the following command to download the latest version:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">curl</span> <span class="o">-</span><span class="n">sL</span> <span class="s1">&#39;https://apt.netmaker.org/remote-client/gpg.key&#39;</span> <span class="o">|</span> <span class="n">sudo</span> <span class="n">tee</span> <span class="o">/</span><span class="n">etc</span><span class="o">/</span><span class="n">apt</span><span class="o">/</span><span class="n">trusted</span><span class="o">.</span><span class="n">gpg</span><span class="o">.</span><span class="n">d</span><span class="o">/</span><span class="n">remote</span><span class="o">-</span><span class="n">client</span><span class="o">.</span><span class="n">asc</span>
+<span class="n">curl</span> <span class="o">-</span><span class="n">sL</span> <span class="s1">&#39;https://apt.netmaker.org/remote-client/debian.deb.txt&#39;</span> <span class="o">|</span> <span class="n">sudo</span> <span class="n">tee</span> <span class="o">/</span><span class="n">etc</span><span class="o">/</span><span class="n">apt</span><span class="o">/</span><span class="n">sources</span><span class="o">.</span><span class="n">list</span><span class="o">.</span><span class="n">d</span><span class="o">/</span><span class="n">remote</span><span class="o">-</span><span class="n">client</span><span class="o">.</span><span class="n">list</span>
+<span class="n">sudo</span> <span class="n">apt</span> <span class="n">update</span>
+<span class="n">sudo</span> <span class="n">apt</span> <span class="n">search</span> <span class="n">remote</span><span class="o">-</span><span class="n">client</span>  <span class="c1"># to see available versions</span>
+<span class="n">sudo</span> <span class="n">apt</span> <span class="n">install</span> <span class="n">remote</span><span class="o">-</span><span class="n">client</span>
+</pre></div>
+</div>
+<p><strong>Red Hat Distros (Fedora/RedHat/CentOSRocky):</strong></p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">curl</span> <span class="o">-</span><span class="n">sL</span> <span class="s1">&#39;https://rpm.netmaker.org/remote-client/gpg.key&#39;</span> <span class="o">|</span> <span class="n">sudo</span> <span class="n">tee</span> <span class="o">/</span><span class="n">tmp</span><span class="o">/</span><span class="n">gpg</span><span class="o">.</span><span class="n">key</span>
+<span class="n">curl</span> <span class="o">-</span><span class="n">sL</span> <span class="s1">&#39;https://rpm.netmaker.org/remote-client/remote-client-repo&#39;</span> <span class="o">|</span> <span class="n">sudo</span> <span class="n">tee</span> <span class="o">/</span><span class="n">etc</span><span class="o">/</span><span class="n">yum</span><span class="o">.</span><span class="n">repos</span><span class="o">.</span><span class="n">d</span><span class="o">/</span><span class="n">remote</span><span class="o">-</span><span class="n">client</span><span class="o">.</span><span class="n">repo</span>
+<span class="n">sudo</span> <span class="n">rpm</span> <span class="o">--</span><span class="kn">import</span> <span class="o">/</span><span class="n">tmp</span><span class="o">/</span><span class="n">gpg</span><span class="o">.</span><span class="n">key</span>
+<span class="n">sudo</span> <span class="n">dnf</span> <span class="n">check</span><span class="o">-</span><span class="n">update</span>
+<span class="n">sudo</span> <span class="n">dnf</span> <span class="n">install</span> <span class="n">remote</span><span class="o">-</span><span class="n">client</span>
+</pre></div>
+</div>
+<p>Following the above instructions, you can run RAC from your Linux desktop environment launcher or from the command line using the <cite>remote-client</cite> command.</p>
+<hr class="docutils" />
+<p>Not finding your OS? You can download the latest version of RAC from the our file server:
+<a class="reference external" href="https://fileserver.netmaker.io/releases/download/latest">https://fileserver.netmaker.io/releases/download/latest</a></p>
+<p>Search for remote client and download the appropriate version for your operating system.</p>
+</section>
+<section id="quick-start">
+<h2>Quick Start<a class="headerlink" href="#quick-start" title="Permalink to this headline"></a></h2>
+<p><strong>NOTE</strong>: OpenGL is a requirement for Netmaker RAC to run. If you are running RAC on a virtual machine (especially with Windows as guest OS), you may need to enable 3D acceleration in your virtual machine settings.</p>
+<p>To use RAC, you will need to have a Netmaker server running and have a user account on that server. You will also need to have a remote access gateway set up on the server. Client devices connect to the network through the remote access gateway (ingress host).</p>
+<p>Check <a class="reference internal" href="pro-users.html#adding-users"><span class="std std-ref">this section</span></a> on how to create a non-admin user.
+RAC is best suited for non-admin users who want to gain remote access to the network, this also provides admins fine-grained control over users in the network by attaching/removing them from a remote access gateway. Admins can also use RAC to gain remote access to the network with a different machine.</p>
+<section id="using-the-remote-access-client-rac">
+<h3>Using the Remote Access Client (RAC)<a class="headerlink" href="#using-the-remote-access-client-rac" title="Permalink to this headline"></a></h3>
+<p>Once a user has been attached to a remote access gateway, they can connect to a network using the remote access client. To do this, they will first need to log in using the credentials that were provided to them. Social login is also supported.</p>
+<a class="reference internal image-reference" href="../_images/remote-access-client.png"><img alt="Remote access login" class="align-center" src="../_images/remote-access-client.png" style="width: 80%;" /></a>
+<p>After successful login you will be shown all the networks and gateways you have given access to, so now you will be able to connect/disconnect/refresh your connection to a gateway. Internet gateways are depicted with a globe icon.
+An internet gateway can be used to route all your traffic through the gateway, this is useful if you want to access the internet without exposing your public IP address. This behaves like a traditional VPN.</p>
+<a class="reference internal image-reference" href="../_images/remote-access-client-2.png"><img alt="Connect and disconnect" class="align-center" src="../_images/remote-access-client-2.png" style="width: 80%;" /></a>
+<p>The remote access client also has the following options:</p>
+<ul class="simple">
+<li><p>Refresh connection: This basically disconnects the current connection to the remote access gateway and then reconnects to it.</p></li>
+<li><p>Reload clients: This reloads the client data on the page, which can be useful if the data has changed since the page was last loaded.</p></li>
+</ul>
+<a class="reference internal image-reference" href="../_images/remote-access-client-3.png"><img alt="Reload clients" class="align-center" src="../_images/remote-access-client-3.png" style="width: 80%;" /></a>
+<ul class="simple">
+<li><p>Reset: This resets all connections to remote access gateways across all Netmaker servers and networks known to the client. This can be useful if you end up with a bad wireguard or network interface configuration or are having trouble connecting to a gateway. you should only use this option if Refresh connection does not work.</p></li>
+</ul>
+</section>
+<section id="using-netmaker-like-a-traditional-vpn">
+<h3>Using Netmaker like a traditional VPN<a class="headerlink" href="#using-netmaker-like-a-traditional-vpn" title="Permalink to this headline"></a></h3>
+<p>Some remote access gateways, specifically internet gateways (depicted by globe icon) can route all your traffic through the them. This can be useful if you want to access the internet without exposing your public IP address. This behaves like a traditional VPN. Internet gateways is a Pro-only feature.</p>
+</section>
+<section id="controlling-rac-user-sessions">
+<h3>Controlling RAC user sessions<a class="headerlink" href="#controlling-rac-user-sessions" title="Permalink to this headline"></a></h3>
+<p>On pro servers/tenants, the duration of a non-admin user’s remote session can be controlled.
+This can be done by setting <cite>RAC_AUTO_DISABLE</cite> (to <cite>true</cite>) and <cite>JWT_VALIDITY_DURATION</cite> (to an integer in seconds) environment variables on the server.</p>
+<p>With <cite>RAC_AUTO_DISABLE</cite> set to true, a non-admin user’s remote sessions will be disabled after the duration specified in <cite>JWT_VALIDITY_DURATION</cite> has elapsed.
+The user will have to relogin to enable their remote session again.</p>
+<p>NOTE: The <cite>JWT_VALIDITY_DURATION</cite> environment variable also configures all the JWT token validity duration for all users, regardless of whether <cite>RAC_AUTO_DISABLE</cite> is set to <cite>true</cite> or not.</p>
+</section>
+<section id="re-starting-the-service-daemon-process">
+<h3>(Re)Starting the service/daemon process<a class="headerlink" href="#re-starting-the-service-daemon-process" title="Permalink to this headline"></a></h3>
+<p>On very few occasion, the RAC daemon may not be running and will need to be restarted manually. There are two ways to resolve this:</p>
+<ol class="arabic simple">
+<li><p>Restart the computer. The daemon starts automatically on boot so restarting the computer will start the daemon on next startup.</p></li>
+<li><p>Manual restart. The exact procedure depends on your operating system.</p></li>
+</ol>
+<section id="manual-daemon-restart-on-windows">
+<h4>Manual daemon restart on Windows<a class="headerlink" href="#manual-daemon-restart-on-windows" title="Permalink to this headline"></a></h4>
+<ol class="arabic simple">
+<li><p>Open Task Manager.</p></li>
+<li><p>Go to the “Services” tab.</p></li>
+<li><p>Look for the “remote-client” service.</p></li>
+<li><p>Right-click on the service and select “Restart” or “Start”.</p></li>
+</ol>
+</section>
+<section id="manual-daemon-restart-on-linux">
+<h4>Manual daemon restart on Linux<a class="headerlink" href="#manual-daemon-restart-on-linux" title="Permalink to this headline"></a></h4>
+<p>On Linux, RAC daemon relies on systemd to manage the service. You can restart the service using the following command:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">sudo</span> <span class="n">systemctl</span> <span class="n">restart</span> <span class="n">remote</span><span class="o">-</span><span class="n">client</span>
+</pre></div>
+</div>
+</section>
+<section id="manual-daemon-restart-on-mac">
+<h4>Manual daemon restart on Mac<a class="headerlink" href="#manual-daemon-restart-on-mac" title="Permalink to this headline"></a></h4>
+<p>On Mac, RAC daemon relies on launchd to manage the service. You can restart the service using the following command:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">sudo</span> <span class="n">launchctl</span> <span class="n">stop</span> <span class="n">com</span><span class="o">.</span><span class="n">netmaker</span><span class="o">.</span><span class="n">remote</span><span class="o">-</span><span class="n">client</span>
+<span class="n">sudo</span> <span class="n">launchctl</span> <span class="n">start</span> <span class="n">com</span><span class="o">.</span><span class="n">netmaker</span><span class="o">.</span><span class="n">remote</span><span class="o">-</span><span class="n">client</span>
+</pre></div>
+</div>
+</section>
+</section>
+<section id="faqs-and-known-issues">
+<h3>FAQs and Known Issues<a class="headerlink" href="#faqs-and-known-issues" title="Permalink to this headline"></a></h3>
+<p><strong>Q: I am getting an error when trying to connect to a gateway.</strong></p>
+<p>A: Make sure that the gateway is running healthily and that you have access to it. Also try to “Refresh” and see if that fixes the issue. Otherwise “Reset” all connections and try again.</p>
+<p><strong>Q: Other WireGuard-based VPNs interfere with Netmaker RAC.</strong></p>
+<p>A: This is a known issue. If you have other WireGuard-based VPNs running on your machine, they may interfere with Netmaker RAC. You can try to disable them and see if that fixes the issue. Pro-tip: Netmaker Pro offers internet gateway functionality, so you can use it just as a traditional VPN. For more information, explore the <a class="reference external" href="https://www.netmaker.io/features/remote-access-gateway">Remote Access gateway feature</a>.</p>
+</section>
+</section>
+</section>
+
+
+           </div>
+          </div>
+          <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
+        <a href="pro-branding.html" class="btn btn-neutral float-left" title="UI Branding" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+        <a href="pro-failovers.html" class="btn btn-neutral float-right" title="FailOver Servers" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>&#169; Copyright 2024, Netmaker Inc..</p>
+  </div>
+
+  Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    provided by <a href="https://readthedocs.org">Read the Docs</a>.
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>

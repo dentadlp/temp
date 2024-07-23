@@ -1,0 +1,407 @@
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" >
+<head>
+  <meta charset="utf-8" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Netclient &mdash; Netmaker 0.24.3 documentation</title>
+      <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+      <link rel="stylesheet" href="_static/css/theme.css" type="text/css" />
+      <link rel="stylesheet" href="_static/custom.css" type="text/css" />
+      <link rel="stylesheet" href="_static/fonts.css" type="text/css" />
+      <link rel="stylesheet" href="_static/netmaker-custom.css" type="text/css" />
+  <!--[if lt IE 9]>
+    <script src="_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+        <script data-url_root="./" id="documentation_options" src="_static/documentation_options.js"></script>
+        <script src="_static/jquery.js"></script>
+        <script src="_static/underscore.js"></script>
+        <script src="_static/doctools.js"></script>
+    <script src="_static/js/theme.js"></script>
+    <link rel="author" title="About these documents" href="about.html" />
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+    <link rel="next" title="Advanced Client Installation" href="advanced-client-install.html" />
+    <link rel="prev" title="Manual Install" href="manual-install.html" /> 
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+
+          
+          
+          <a href="index.html">
+            
+          </a>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" aria-label="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="about.html">About</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="getting-started.html">Getting Started</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="install.html">Install</a></li>
+<li class="toctree-l2"><a class="reference internal" href="manual-install.html">Manual Install</a></li>
+<li class="toctree-l2 current"><a class="current reference internal" href="#">Netclient</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#installation">Installation</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#linux">Linux</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#windows">Windows</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#mac">Mac</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#docker">Docker</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="#joining-a-network">Joining a Network</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#managing-netclient">Managing Netclient</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#connecting-disconnecting-from-a-network">Connecting/Disconnecting from a network</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#leave-a-network">Leave a network</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#list-networks">List Networks</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#multi-server">Multi-Server</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#use-a-different-version">Use a different version</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="#uninstalling">Uninstalling</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="advanced-client-install.html">Advanced Client Installation</a></li>
+<li class="toctree-l2"><a class="reference internal" href="server-installation.html">Advanced Server Installation</a></li>
+<li class="toctree-l2"><a class="reference internal" href="getting-started.html#setup">Setup</a></li>
+<li class="toctree-l2"><a class="reference internal" href="getting-started.html#create-a-network">Create a Network</a></li>
+<li class="toctree-l2"><a class="reference internal" href="getting-started.html#create-a-key">Create a Key</a></li>
+<li class="toctree-l2"><a class="reference internal" href="getting-started.html#deploy-nodes">Deploy Nodes</a></li>
+<li class="toctree-l2"><a class="reference internal" href="getting-started.html#manage-nodes-hosts">Manage Nodes/Hosts</a></li>
+<li class="toctree-l2"><a class="reference internal" href="getting-started.html#uninstalling-the-netclient">Uninstalling the netclient</a></li>
+<li class="toctree-l2"><a class="reference internal" href="getting-started.html#uninstalling-netmaker">Uninstalling Netmaker</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="features.html">Features</a></li>
+<li class="toctree-l1"><a class="reference internal" href="pro/index.html">Netmaker Professional</a></li>
+<li class="toctree-l1"><a class="reference internal" href="upgrades.html">Upgrades</a></li>
+<li class="toctree-l1"><a class="reference internal" href="how-to-guides.html">How-to-Guides</a></li>
+<li class="toctree-l1"><a class="reference internal" href="references.html">References</a></li>
+<li class="toctree-l1"><a class="reference internal" href="license.html">License</a></li>
+<li class="toctree-l1"><a class="reference internal" href="conduct.html">Code of Conduct</a></li>
+</ul>
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="index.html">Netmaker</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="index.html" class="icon icon-home" aria-label="Home"></a></li>
+          <li class="breadcrumb-item"><a href="getting-started.html">Getting Started</a></li>
+      <li class="breadcrumb-item active">Netclient</li>
+      <li class="wy-breadcrumbs-aside">
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  <section id="netclient">
+<span id="id1"></span><h1>Netclient<a class="headerlink" href="#netclient" title="Permalink to this headline"></a></h1>
+<p>As of v0.18.0 Netclient is now in its own standalone repo seperate from netmaker.</p>
+<p><strong>Netclient GUI has been deprecated as of v0.22.1.</strong></p>
+<p>And the CLI has been updated.</p>
+<img alt="netclient CLI" class="align-center" src="_images/netclientcli.jpg" />
+<p>The Netclient manages WireGuard on client devices (nodes). This document walks through setting up the netclient on machines, including install, management, and uninstall.</p>
+<p>The Netclient is supported on the following operating systems:</p>
+<ul class="simple">
+<li><p>Linux (most distributions)</p></li>
+<li><p>Windows</p></li>
+<li><p>macOS</p></li>
+<li><p>FreeBSD</p></li>
+</ul>
+<p>For unsupported devices, please use the Remote Access Client config, which is just a static, vanilla, WireGuard configuration file, which can be added to any device that supports WireGuard.</p>
+<section id="installation">
+<h2>Installation<a class="headerlink" href="#installation" title="Permalink to this headline"></a></h2>
+<p>Before adding the machine to a network, the netclient must be installed. A successful installation sets up the netclient executable on the machine and adds it as a system daemon. The daemon will listen for changes for any network it joins.</p>
+<p>The client install <strong>does not</strong> add the client as a member of any network. Once the client is installed, you must run:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">netclient</span> <span class="n">join</span> <span class="o">-</span><span class="n">t</span> <span class="o">&lt;</span><span class="n">token</span><span class="o">&gt;</span>
+</pre></div>
+</div>
+<p>The following are install instructions for most operating systems.</p>
+<section id="linux">
+<h3>Linux<a class="headerlink" href="#linux" title="Permalink to this headline"></a></h3>
+<section id="debian-distros-debian-ubuntu-mint-pop-os">
+<h4>Debian Distros (debian/ubuntu/mint/pop-os)<a class="headerlink" href="#debian-distros-debian-ubuntu-mint-pop-os" title="Permalink to this headline"></a></h4>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">curl</span> <span class="o">-</span><span class="n">sL</span> <span class="s1">&#39;https://apt.netmaker.org/gpg.key&#39;</span> <span class="o">|</span> <span class="n">sudo</span> <span class="n">gpg</span> <span class="o">--</span><span class="n">dearmor</span> <span class="o">-</span><span class="n">o</span> <span class="o">/</span><span class="n">usr</span><span class="o">/</span><span class="n">share</span><span class="o">/</span><span class="n">keyrings</span><span class="o">/</span><span class="n">netmaker</span><span class="o">-</span><span class="n">keyring</span><span class="o">.</span><span class="n">gpg</span>
+<span class="n">echo</span> <span class="s2">&quot;deb [signed-by=/usr/share/keyrings/netmaker-keyring.gpg] https://apt.netmaker.org stable main&quot;</span> <span class="o">|</span> <span class="n">sudo</span> <span class="n">tee</span> <span class="o">/</span><span class="n">etc</span><span class="o">/</span><span class="n">apt</span><span class="o">/</span><span class="n">sources</span><span class="o">.</span><span class="n">list</span><span class="o">.</span><span class="n">d</span><span class="o">/</span><span class="n">netclient</span><span class="o">.</span><span class="n">list</span>
+<span class="n">sudo</span> <span class="n">apt</span> <span class="n">update</span>
+<span class="n">sudo</span> <span class="n">apt</span> <span class="n">install</span> <span class="n">netclient</span>
+</pre></div>
+</div>
+</section>
+<section id="red-hat-distros-fedora-redhat-centos-rocky">
+<h4>Red Hat Distros (fedora/redhat/centos/rocky)<a class="headerlink" href="#red-hat-distros-fedora-redhat-centos-rocky" title="Permalink to this headline"></a></h4>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">curl</span> <span class="o">-</span><span class="n">sL</span> <span class="s1">&#39;https://rpm.netmaker.org/gpg.key&#39;</span> <span class="o">|</span> <span class="n">sudo</span> <span class="n">tee</span> <span class="o">/</span><span class="n">tmp</span><span class="o">/</span><span class="n">gpg</span><span class="o">.</span><span class="n">key</span>
+<span class="n">curl</span> <span class="o">-</span><span class="n">sL</span> <span class="s1">&#39;https://rpm.netmaker.org/netclient-repo&#39;</span> <span class="o">|</span> <span class="n">sudo</span> <span class="n">tee</span> <span class="o">/</span><span class="n">etc</span><span class="o">/</span><span class="n">yum</span><span class="o">.</span><span class="n">repos</span><span class="o">.</span><span class="n">d</span><span class="o">/</span><span class="n">netclient</span><span class="o">.</span><span class="n">repo</span>
+<span class="n">sudo</span> <span class="n">rpm</span> <span class="o">--</span><span class="kn">import</span> <span class="o">/</span><span class="n">tmp</span><span class="o">/</span><span class="n">gpg</span><span class="o">.</span><span class="n">key</span>
+<span class="n">sudo</span> <span class="n">dnf</span> <span class="n">check</span><span class="o">-</span><span class="n">update</span>
+<span class="n">sudo</span> <span class="n">dnf</span> <span class="n">install</span> <span class="n">netclient</span>
+</pre></div>
+</div>
+</section>
+<section id="arch-distros-arch-manjaro-endeavouros">
+<h4>Arch Distros (arch/manjaro/endeavouros)<a class="headerlink" href="#arch-distros-arch-manjaro-endeavouros" title="Permalink to this headline"></a></h4>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">yay</span> <span class="o">-</span><span class="n">S</span> <span class="n">netclient</span>
+</pre></div>
+</div>
+</section>
+<section id="opensuse-tumbleweed-leap">
+<h4>OpenSUSE (tumbleweed/leap)<a class="headerlink" href="#opensuse-tumbleweed-leap" title="Permalink to this headline"></a></h4>
+<div class="highlight-shell notranslate"><div class="highlight"><pre><span></span>sudo rpm --import https://rpm.netmaker.org/gpg.key
+curl -sL <span class="s1">&#39;https://rpm.netmaker.org/netclient-repo&#39;</span> <span class="p">|</span> sudo tee /etc/zypp/repos.d/netclient.repo
+sudo zypper refresh
+sudo zypper install netclient
+</pre></div>
+</div>
+</section>
+</section>
+<section id="windows">
+<h3>Windows<a class="headerlink" href="#windows" title="Permalink to this headline"></a></h3>
+<section id="bundled-installer">
+<h4>Bundled Installer<a class="headerlink" href="#bundled-installer" title="Permalink to this headline"></a></h4>
+<p>Download Link: <a class="reference external" href="https://fileserver.netmaker.org/releases/download/latest/netclientbundle.exe">https://fileserver.netmaker.org/releases/download/latest/netclientbundle.exe</a></p>
+</section>
+</section>
+<section id="mac">
+<h3>Mac<a class="headerlink" href="#mac" title="Permalink to this headline"></a></h3>
+<section id="brew-install">
+<h4>Brew Install<a class="headerlink" href="#brew-install" title="Permalink to this headline"></a></h4>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">brew</span> <span class="n">tap</span> <span class="n">gravitl</span><span class="o">/</span><span class="n">netclient</span>
+<span class="p">(</span><span class="n">optional</span><span class="p">)</span> <span class="n">brew</span> <span class="n">audit</span> <span class="n">netclient</span>
+<span class="n">brew</span> <span class="n">install</span> <span class="n">netclient</span>
+</pre></div>
+</div>
+</section>
+<section id="installer">
+<h4>Installer<a class="headerlink" href="#installer" title="Permalink to this headline"></a></h4>
+<p>Download Link for Apple silicon: <a class="reference external" href="https://fileserver.netmaker.org/releases/download/latest/Netclient-M1.pkg">https://fileserver.netmaker.org/releases/download/latest/Netclient-M1.pkg</a></p>
+<p>Download Link for Apple Intel: <a class="reference external" href="https://fileserver.netmaker.org/releases/download/latest/Netclient-Intel.pkg">https://fileserver.netmaker.org/releases/download/latest/Netclient-Intel.pkg</a></p>
+</section>
+</section>
+<section id="docker">
+<h3>Docker<a class="headerlink" href="#docker" title="Permalink to this headline"></a></h3>
+<p>You can run Netclient using Docker instead of installing it on your local machine.  To ensure that the correct commands are present in order to use Docker use these steps:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">sudo</span> <span class="n">apt</span><span class="o">-</span><span class="n">get</span> <span class="n">update</span>
+<span class="n">sudo</span> <span class="n">apt</span><span class="o">-</span><span class="n">get</span> <span class="n">install</span> <span class="o">-</span><span class="n">y</span> <span class="n">docker</span><span class="o">.</span><span class="n">io</span> <span class="n">docker</span><span class="o">-</span><span class="n">compose</span>
+</pre></div>
+</div>
+<p>After that you can proceed to join the network using the docker command from the access key for the network you wish to join.  The docker command is available from the access key view in the Netmaker UI.  To have the netclient docker container restart (eg after the system reboots) you’ll want to use the following option when running docker run:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="o">--</span><span class="n">restart</span><span class="o">=</span><span class="n">always</span>
+</pre></div>
+</div>
+<p>If you prefer (e.g., when specifying a lot of environment variables), you can use a docker-compose.yml file such as the following instead of the docker run command:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">version</span><span class="p">:</span> <span class="s2">&quot;3.4&quot;</span>
+
+<span class="n">services</span><span class="p">:</span>
+    <span class="n">netclient</span><span class="p">:</span>
+        <span class="n">network_mode</span><span class="p">:</span> <span class="n">host</span>
+        <span class="n">privileged</span><span class="p">:</span> <span class="n">true</span>
+        <span class="n">restart</span><span class="p">:</span> <span class="n">always</span>
+        <span class="n">environment</span><span class="p">:</span>
+            <span class="o">-</span> <span class="n">TOKEN</span><span class="o">=&lt;</span><span class="n">networktoken</span><span class="o">&gt;</span>
+            <span class="o">-</span> <span class="n">PORT</span><span class="o">=&lt;</span><span class="n">wg</span> <span class="n">interface</span> <span class="n">port</span><span class="o">&gt;</span>
+            <span class="o">-</span> <span class="n">ENDPOINT</span><span class="o">=&lt;</span><span class="n">endpoint</span> <span class="n">ip</span><span class="o">&gt;</span>
+            <span class="o">-</span> <span class="n">MTU</span><span class="o">=&lt;</span><span class="n">mtu</span><span class="o">&gt;</span>
+            <span class="o">-</span> <span class="n">HOST_NAME</span><span class="o">=&lt;</span><span class="n">host</span> <span class="n">name</span><span class="o">&gt;</span>
+            <span class="o">-</span> <span class="n">IS_STATIC</span><span class="o">=&lt;</span><span class="n">static</span> <span class="n">host</span> <span class="p">(</span><span class="n">true</span><span class="o">/</span><span class="n">false</span><span class="p">)</span><span class="o">&gt;</span>
+        <span class="n">volumes</span><span class="p">:</span>
+            <span class="o">-</span> <span class="s1">&#39;/etc/netclient:/etc/netclient&#39;</span>
+        <span class="n">container_name</span><span class="p">:</span> <span class="n">netclient</span>
+        <span class="n">image</span><span class="p">:</span> <span class="s1">&#39;gravitl/netclient:latest&#39;</span>
+</pre></div>
+</div>
+<p>where &lt;networktoken&gt; is the Access Token available from the “Viewing your Access Key Details” window in the Netmaker UI.</p>
+<p>If you are making a docker container on a server that already has a baremetal version of netclient on there, this will create a conflict. Netmaker will only make one host for that machine and not see the container as another node. Meanwhile on the client, both daemons will be running (bare metal and container), causing conflicts (both receive the peer updates) and the node becomes unreachable.</p>
+<p>You can work around this by running the docker netclient using a seperate netclient folder and having host networking NOT enabled. Host networking must be turned off when running with multiple netclients. This means that the host will not have the private address of the container and it will be segmented.</p>
+<p>Your compose would look more like this:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">version</span><span class="p">:</span> <span class="s2">&quot;3.4&quot;</span>
+
+<span class="n">services</span><span class="p">:</span>
+    <span class="n">netclient</span><span class="p">:</span>
+        <span class="n">privileged</span><span class="p">:</span> <span class="n">true</span>
+        <span class="n">network_mode</span><span class="p">:</span> <span class="n">host</span>
+        <span class="n">restart</span><span class="p">:</span> <span class="n">always</span>
+        <span class="n">environment</span><span class="p">:</span>
+            <span class="o">-</span> <span class="n">TOKEN</span><span class="o">=&lt;</span><span class="n">networktoken</span><span class="o">&gt;</span>
+            <span class="o">-</span> <span class="n">PORT</span><span class="o">=&lt;</span><span class="n">wg</span> <span class="n">interface</span> <span class="n">port</span><span class="o">&gt;</span>
+            <span class="o">-</span> <span class="n">ENDPOINT</span><span class="o">=&lt;</span><span class="n">endpoint</span> <span class="n">ip</span><span class="o">&gt;</span>
+            <span class="o">-</span> <span class="n">MTU</span><span class="o">=&lt;</span><span class="n">mtu</span><span class="o">&gt;</span>
+            <span class="o">-</span> <span class="n">HOST_NAME</span><span class="o">=</span><span class="n">nc</span><span class="o">-</span><span class="n">docker</span><span class="o">-</span><span class="mi">2</span>
+            <span class="o">-</span> <span class="n">IS_STATIC</span><span class="o">=&lt;</span><span class="n">static</span> <span class="n">host</span> <span class="p">(</span><span class="n">true</span><span class="o">/</span><span class="n">false</span><span class="p">)</span><span class="o">&gt;</span>
+            <span class="o">-</span> <span class="n">IFACE_NAME</span><span class="o">=</span><span class="n">netmaker</span><span class="o">-</span><span class="mi">2</span>
+        <span class="n">volumes</span><span class="p">:</span>
+            <span class="o">-</span> <span class="s1">&#39;/etc/netclient2:/etc/netclient&#39;</span>
+        <span class="n">container_name</span><span class="p">:</span> <span class="n">netclient2</span>
+        <span class="n">image</span><span class="p">:</span> <span class="s1">&#39;gravitl/netclient:latest&#39;</span>
+</pre></div>
+</div>
+<p>By using this method, you can run many netclients on the same host and just incrementing up the volumes (netclient3, netclient4 ….. netclientN) and make sure to set the interface name, so that it won’t conflict with existing netclients running on same host.</p>
+<dl>
+<dt><strong>IMPORTANT:</strong></dt><dd><p>For docker netclient to function correctly as either remote access/egress gateway, you need to additionally run the following commands on the host machine:</p>
+<blockquote>
+<div><ol class="arabic simple">
+<li><p><cite>iptables -I DOCKER-USER -i netmaker  -j ACCEPT</cite></p></li>
+<li><p><cite>iptables -I DOCKER-USER -o netmaker  -j ACCEPT</cite></p></li>
+</ol>
+</div></blockquote>
+</dd>
+</dl>
+</section>
+</section>
+<section id="joining-a-network">
+<h2>Joining a Network<a class="headerlink" href="#joining-a-network" title="Permalink to this headline"></a></h2>
+<p>The join command provides the following flags with short descriptions on what each one does.</p>
+<a class="reference internal image-reference" href="_images/netclientjoincli.jpg"><img alt="netclient CLI" class="align-center" src="_images/netclientjoincli.jpg" style="width: 80%;" /></a>
+<p>With a token:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">netclient</span> <span class="n">join</span> <span class="o">-</span><span class="n">t</span> <span class="o">&lt;</span><span class="n">token</span><span class="o">&gt;</span>
+</pre></div>
+</div>
+<p>With username/password:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">netclient</span> <span class="n">join</span> <span class="o">-</span><span class="n">n</span> <span class="o">&lt;</span><span class="n">net</span> <span class="n">name</span><span class="o">&gt;</span> <span class="o">-</span><span class="n">u</span> <span class="o">&lt;</span><span class="n">username</span><span class="o">&gt;</span> <span class="o">-</span><span class="n">s</span> <span class="n">api</span><span class="o">.&lt;</span><span class="n">netmaker</span> <span class="n">domain</span><span class="o">&gt;</span>
+<span class="p">(</span><span class="n">example</span><span class="p">:</span> <span class="n">netclient</span> <span class="n">join</span> <span class="o">-</span><span class="n">n</span> <span class="n">mynet</span> <span class="o">-</span><span class="n">u</span> <span class="n">admin</span> <span class="o">-</span><span class="n">s</span> <span class="n">api</span><span class="o">.</span><span class="n">nm</span><span class="o">.</span><span class="n">example</span><span class="o">-</span><span class="n">domain</span><span class="o">.</span><span class="n">io</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>With SSO (oauth must be configured):</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">netclient</span> <span class="n">join</span> <span class="o">-</span><span class="n">n</span> <span class="o">&lt;</span><span class="n">net</span> <span class="n">name</span><span class="o">&gt;</span> <span class="o">-</span><span class="n">s</span> <span class="n">api</span><span class="o">.&lt;</span><span class="n">netmaker</span> <span class="n">domain</span><span class="o">&gt;</span>
+</pre></div>
+</div>
+<p>With docker:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">docker</span> <span class="n">run</span> <span class="o">-</span><span class="n">d</span> <span class="o">--</span><span class="n">network</span> <span class="n">host</span>  <span class="o">--</span><span class="n">privileged</span> <span class="o">-</span><span class="n">e</span> <span class="n">TOKEN</span><span class="o">=&lt;</span><span class="n">TOKEN</span><span class="o">&gt;</span> <span class="o">-</span><span class="n">v</span> <span class="o">/</span><span class="n">etc</span><span class="o">/</span><span class="n">netclient</span><span class="p">:</span><span class="o">/</span><span class="n">etc</span><span class="o">/</span><span class="n">netclient</span> <span class="o">--</span><span class="n">name</span> <span class="n">netclient</span> <span class="n">gravitl</span><span class="o">/</span><span class="n">netclient</span><span class="p">:</span><span class="o">&lt;</span><span class="n">CURRENT_VERSION</span><span class="o">&gt;</span>
+</pre></div>
+</div>
+<p>Again, if you are making a docker container on an already existing baremetal netclient, you will have to modify the join command like this for example:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">docker</span> <span class="n">run</span> <span class="o">-</span><span class="n">d</span> <span class="o">--</span><span class="n">network</span> <span class="n">host</span> <span class="o">--</span><span class="n">privileged</span> <span class="o">-</span><span class="n">e</span> <span class="n">TOKEN</span><span class="o">=&lt;</span><span class="n">TOKEN</span><span class="o">&gt;</span> <span class="o">-</span><span class="n">e</span> <span class="n">HOST_NAME</span><span class="o">=</span><span class="n">nc</span><span class="o">-</span><span class="n">docker</span><span class="o">-</span><span class="mi">2</span> <span class="o">-</span><span class="n">e</span> <span class="n">IFACE_NAME</span><span class="o">=</span><span class="s2">&quot;netmaker-2&quot;</span> <span class="o">-</span><span class="n">v</span> <span class="o">/</span><span class="n">etc</span><span class="o">/</span><span class="n">netclient2</span><span class="p">:</span><span class="o">/</span><span class="n">etc</span><span class="o">/</span><span class="n">netclient</span> <span class="o">--</span><span class="n">name</span> <span class="n">netclient2</span> <span class="n">gravitl</span><span class="o">/</span><span class="n">new</span><span class="o">-</span><span class="n">netclient</span><span class="p">:</span><span class="o">&lt;</span><span class="n">CURRENT_VERSION</span><span class="o">&gt;</span>
+</pre></div>
+</div>
+<p>Make sure interface name you pass when running multiple netclient containers on same host doesn’t conflict with each other.</p>
+<p>These commands will be available to copy and paste in the access keys section of your netmaker UI. You can set the verbosity to a level 0-4 with the flag <code class="docutils literal notranslate"><span class="pre">-v</span> <span class="pre">&lt;number</span> <span class="pre">0-4&gt;</span></code> in the join command if you need more info about the join.</p>
+</section>
+<section id="managing-netclient">
+<h2>Managing Netclient<a class="headerlink" href="#managing-netclient" title="Permalink to this headline"></a></h2>
+<section id="connecting-disconnecting-from-a-network">
+<h3>Connecting/Disconnecting from a network<a class="headerlink" href="#connecting-disconnecting-from-a-network" title="Permalink to this headline"></a></h3>
+<p>You can connect/disconnect from the network from either the netclient, or from the GUI.</p>
+<p>From the CLI, you can use the following:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">netclient</span> <span class="n">connect</span> <span class="o">&lt;</span><span class="n">network_name</span><span class="o">&gt;</span>
+<span class="n">netclient</span> <span class="n">disconnect</span> <span class="o">&lt;</span><span class="n">network_name</span><span class="o">&gt;</span>
+</pre></div>
+</div>
+<p>You can also disconnect and reconnect from the UI. Click on the node you want to disconnect/reconnect and click on edit.</p>
+<p>On the bottom, you should see a switch labeled connected like this one. toggle the switch and hit submit. That client will connect or disconnect accordingly.</p>
+<a class="reference internal image-reference" href="_images/disconnect.jpg"><img alt="connect/disconnect button" class="align-center" src="_images/disconnect.jpg" style="width: 80%;" /></a>
+<p>If you disconnected from the CLI, This switch should be off.</p>
+</section>
+<section id="leave-a-network">
+<h3>Leave a network<a class="headerlink" href="#leave-a-network" title="Permalink to this headline"></a></h3>
+<p>In the GUI, the leave network button is located in the network details. You can also leave from the CLI with the following command.</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">netclient</span> <span class="n">leave</span> <span class="o">&lt;</span><span class="n">network</span><span class="o">&gt;</span>
+</pre></div>
+</div>
+</section>
+<section id="list-networks">
+<h3>List Networks<a class="headerlink" href="#list-networks" title="Permalink to this headline"></a></h3>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">netclient</span> <span class="nb">list</span>
+</pre></div>
+</div>
+</section>
+<section id="multi-server">
+<h3>Multi-Server<a class="headerlink" href="#multi-server" title="Permalink to this headline"></a></h3>
+<p>Netclient can be registered with multiple netmaker servers. You can list the servers you are registered with using netclient server list command.
+The server you are currently connected to will be marked with “active: “.
+.. code-block:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">netclient</span> <span class="n">server</span> <span class="nb">list</span>
+</pre></div>
+</div>
+<p>You can switch between different netmaker servers using netclient switch command.
+<em>Warning: Switching to another server will disconnect netclient from all the networks on the current server, but you can always switch back using the netclient switch command.</em>
+.. code-block:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">netclient</span> <span class="n">server</span> <span class="n">switch</span> <span class="o">&lt;</span><span class="n">server</span> <span class="n">name</span><span class="o">&gt;</span>
+</pre></div>
+</div>
+<p>You can completely leave a server using the netclient server leave command.
+<em>Warning: Leaving a server will remove the host from all networks on the server and delete the host from the server.</em>
+In order to reconnect to server you must join or register*</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">netclient</span> <span class="n">server</span> <span class="n">leave</span> <span class="o">&lt;</span><span class="n">server</span> <span class="n">name</span><span class="o">&gt;</span>
+</pre></div>
+</div>
+</section>
+<section id="use-a-different-version">
+<h3>Use a different version<a class="headerlink" href="#use-a-different-version" title="Permalink to this headline"></a></h3>
+<p>Netclient as of v0.18.0 has an option to choose which version of netclient you would like to use. This only applies to versions v0.18.0 and later.</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">netclient</span> <span class="n">use</span> <span class="o">&lt;</span><span class="n">version</span><span class="o">&gt;</span>
+</pre></div>
+</div>
+<p>Netclient also has an auto-update feature as of v0.18.0</p>
+</section>
+</section>
+<section id="uninstalling">
+<h2>Uninstalling<a class="headerlink" href="#uninstalling" title="Permalink to this headline"></a></h2>
+<p>Leave a network:</p>
+<p>Uninstall from CLI:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">netclient</span> <span class="n">uninstall</span>
+</pre></div>
+</div>
+<p>Uninstall using package manager (use equivalent command for your OS):</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">apt</span> <span class="n">remove</span> <span class="n">netclient</span>
+</pre></div>
+</div>
+<p>With a Mac, just go to applications in your finder and throw netclient in the trash bin, or use</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">brew</span> <span class="n">uninstall</span> <span class="n">netclient</span>
+</pre></div>
+</div>
+<p>if it was installed through Homebrew</p>
+<p>With windows go to “Add or remove programs” in your system settings and remove netclient.</p>
+</section>
+</section>
+
+
+           </div>
+          </div>
+          <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
+        <a href="manual-install.html" class="btn btn-neutral float-left" title="Manual Install" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+        <a href="advanced-client-install.html" class="btn btn-neutral float-right" title="Advanced Client Installation" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>&#169; Copyright 2024, Netmaker Inc..</p>
+  </div>
+
+  Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    provided by <a href="https://readthedocs.org">Read the Docs</a>.
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>

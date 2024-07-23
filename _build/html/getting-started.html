@@ -1,0 +1,236 @@
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" >
+<head>
+  <meta charset="utf-8" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Getting Started &mdash; Netmaker 0.24.3 documentation</title>
+      <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+      <link rel="stylesheet" href="_static/css/theme.css" type="text/css" />
+      <link rel="stylesheet" href="_static/custom.css" type="text/css" />
+      <link rel="stylesheet" href="_static/fonts.css" type="text/css" />
+      <link rel="stylesheet" href="_static/netmaker-custom.css" type="text/css" />
+  <!--[if lt IE 9]>
+    <script src="_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+        <script data-url_root="./" id="documentation_options" src="_static/documentation_options.js"></script>
+        <script src="_static/jquery.js"></script>
+        <script src="_static/underscore.js"></script>
+        <script src="_static/doctools.js"></script>
+    <script src="_static/js/theme.js"></script>
+    <link rel="author" title="About these documents" href="about.html" />
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+    <link rel="next" title="Install" href="install.html" />
+    <link rel="prev" title="Architecture" href="architecture.html" /> 
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+
+          
+          
+          <a href="index.html">
+            
+          </a>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" aria-label="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="about.html">About</a></li>
+<li class="toctree-l1 current"><a class="current reference internal" href="#">Getting Started</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="install.html">Install</a></li>
+<li class="toctree-l2"><a class="reference internal" href="manual-install.html">Manual Install</a></li>
+<li class="toctree-l2"><a class="reference internal" href="netclient.html">Netclient</a></li>
+<li class="toctree-l2"><a class="reference internal" href="advanced-client-install.html">Advanced Client Installation</a></li>
+<li class="toctree-l2"><a class="reference internal" href="server-installation.html">Advanced Server Installation</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#setup">Setup</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#create-a-network">Create a Network</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#network-settings-description">Network Settings Description</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="#create-a-key">Create a Key</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#deploy-nodes">Deploy Nodes</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#manage-nodes-hosts">Manage Nodes/Hosts</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#uninstalling-the-netclient">Uninstalling the netclient</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#uninstalling-netmaker">Uninstalling Netmaker</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="features.html">Features</a></li>
+<li class="toctree-l1"><a class="reference internal" href="pro/index.html">Netmaker Professional</a></li>
+<li class="toctree-l1"><a class="reference internal" href="upgrades.html">Upgrades</a></li>
+<li class="toctree-l1"><a class="reference internal" href="how-to-guides.html">How-to-Guides</a></li>
+<li class="toctree-l1"><a class="reference internal" href="references.html">References</a></li>
+<li class="toctree-l1"><a class="reference internal" href="license.html">License</a></li>
+<li class="toctree-l1"><a class="reference internal" href="conduct.html">Code of Conduct</a></li>
+</ul>
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="index.html">Netmaker</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="index.html" class="icon icon-home" aria-label="Home"></a></li>
+      <li class="breadcrumb-item active">Getting Started</li>
+      <li class="wy-breadcrumbs-aside">
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  <section id="getting-started">
+<h1>Getting Started<a class="headerlink" href="#getting-started" title="Permalink to this headline"></a></h1>
+<div class="toctree-wrapper compound">
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="install.html">Install</a></li>
+<li class="toctree-l1"><a class="reference internal" href="manual-install.html">Manual Install</a></li>
+<li class="toctree-l1"><a class="reference internal" href="netclient.html">Netclient</a></li>
+<li class="toctree-l1"><a class="reference internal" href="advanced-client-install.html">Advanced Client Installation</a></li>
+<li class="toctree-l1"><a class="reference internal" href="server-installation.html">Advanced Server Installation</a></li>
+</ul>
+</div>
+<section id="setup">
+<h2>Setup<a class="headerlink" href="#setup" title="Permalink to this headline"></a></h2>
+<ol class="arabic simple">
+<li><p>Create your admin user, with a username and password.</p></li>
+<li><p>Login with your new user</p></li>
+<li><p>Create your first network by clicking on Create Network</p></li>
+</ol>
+</section>
+<section id="create-a-network">
+<h2>Create a Network<a class="headerlink" href="#create-a-network" title="Permalink to this headline"></a></h2>
+<a class="reference internal image-reference" href="_images/create-net.jpg"><img alt="Create Network Screen" class="align-center" src="_images/create-net.jpg" style="width: 80%;" /></a>
+<p>This network should have a sensible name.</p>
+<p>More importantly, it should have a non-overlapping, private address range.</p>
+<p>If you are running a small (less than 254 machines) network, and are unsure of which CIDR’s to use, you could consider:</p>
+<ul class="simple">
+<li><p>10.11.12.0/24</p></li>
+<li><p>10.20.30.0/24</p></li>
+<li><p>10.99.98.0/24</p></li>
+</ul>
+<section id="network-settings-description">
+<h3>Network Settings Description<a class="headerlink" href="#network-settings-description" title="Permalink to this headline"></a></h3>
+<p>The Network creation form has a few fields which may seem unfamiliar. Here is a brief description:</p>
+<p><strong>IPv4:</strong> Adds private IPv4 to all nodes in a network</p>
+<p><strong>IPv6:</strong> Adds private IPv6 to all nodes in a network</p>
+<p><strong>Default Access Control:</strong> Indicates the default ACL value for a node when it joins in respect to it’s peers (enabled or disabled).</p>
+<p>Once your network is created, you should see the network (wg-net here but it will be the name you chose when creating the network):</p>
+<a class="reference internal image-reference" href="_images/network-created.jpg"><img alt="Node Screen" class="align-center" src="_images/network-created.jpg" style="width: 80%;" /></a>
+<p>When you click on the NetId and then the Nodes button (or go direct via the left-hand menu and then Nodes) you see that the netmaker server has added itself to the network. From here, you can move on to adding additional nodes to the network.</p>
+<p>As of v0.18.0, netclient has been moved out of the netmaker repo and into its own repo. This means that the netmaker server will no longer create its own default node. To recreate that default node, Netclient will also have to be installed on the netmaker server and joined to the network. You can then set that node as a default node in the Hosts tab. This will make every new network have that node automatically on creation. More on hosts are mentioned in the manage Nodes/Hosts section of this page.</p>
+<a class="reference internal image-reference" href="_images/netmaker-node.jpg"><img alt="Node Screen" class="align-center" src="_images/netmaker-node.jpg" style="width: 80%;" /></a>
+</section>
+</section>
+<section id="create-a-key">
+<h2>Create a Key<a class="headerlink" href="#create-a-key" title="Permalink to this headline"></a></h2>
+<p>Adding nodes to the network typically requires a key. If You are on version 0.18 or newer, you will use the enrollment key to acces a netmaker server. Enrollment keys offer different ways to register with a server.</p>
+<p>Navigate to the enrollment keys tab on the side menu. You should see a create button in the top right corner. After clicking that, you should be brought to a window like this.</p>
+<a class="reference internal image-reference" href="_images/enrollmentkeycreate.jpg"><img alt="Enrollment Key Screen" class="align-center" src="_images/enrollmentkeycreate.jpg" style="width: 80%;" /></a>
+<p>This will give you a few different options on how you want to set up your enrollment key. you can set it up with unlimited uses, limited uses, or timebound uses. You can also setup one or multiple networks to join, or you can set it to no networks and then join a network through the UI in the hosts tab. Click on newly registered host and go to the networks tab. Then click on show all networks. You can also create any tags you would like for that key</p>
+<a class="reference internal image-reference" href="_images/networkjoinui.jpg"><img alt="Join network through UI" class="align-center" src="_images/networkjoinui.jpg" style="width: 80%;" /></a>
+<p>If an enrollment key runs out of uses, or is expired, the key will show as invalid like in the image below.</p>
+<a class="reference internal image-reference" href="_images/enrollmentkeyinvalid.jpg"><img alt="Enrollment Key Screen with invalid keys" class="align-center" src="_images/enrollmentkeyinvalid.jpg" style="width: 80%;" /></a>
+<p>After your enrollment key is created, you can click on that key to get the registration token.</p>
+<a class="reference internal image-reference" href="_images/enrollmentkeytoken.jpg"><img alt="Enrollment Key token window" class="align-center" src="_images/enrollmentkeytoken.jpg" style="width: 80%;" /></a>
+<ul class="simple">
+<li><p>The <strong>Enrollment Key</strong> value is the secret string that will allow your node to authenticate with the Netmaker network. This can be used with existing netclient installations where additional configurations (such as setting the server IP manually) may be required. This is not typical. E.g. <code class="docutils literal notranslate"><span class="pre">netclient</span> <span class="pre">register</span> <span class="pre">-k</span> <span class="pre">&lt;enrollment</span> <span class="pre">key&gt;</span> <span class="pre">-s</span> <span class="pre">grpc.myserver.com</span> <span class="pre">-p</span> <span class="pre">50051</span></code></p></li>
+<li><p>The <strong>Registration Token</strong> value is a base64 encoded string that contains the server IP and grpc port, as well as the enrollment key. This is decoded by the netclient and can be used with existing netclient installations like this: <code class="docutils literal notranslate"><span class="pre">netclient</span> <span class="pre">register</span> <span class="pre">-t</span> <span class="pre">&lt;registration</span> <span class="pre">token&gt;</span></code>. You should use this method for adding a network to a node that is already on a network. For instance, Node A is in the <strong>mynet</strong> network and now you are adding it to <strong>default</strong>.</p></li>
+<li><p>The <strong>Register Command</strong> value is a command that can be run on Linux systems after installing the Netclient.  It will register with the server directly from the command line.</p></li>
+</ul>
+<p>Other variations (eg Docker) are covered with the remaining values.</p>
+</section>
+<section id="deploy-nodes">
+<h2>Deploy Nodes<a class="headerlink" href="#deploy-nodes" title="Permalink to this headline"></a></h2>
+<ol class="arabic simple" start="0">
+<li><p>Prereqisite: Every machine on which you install should have WireGuard and systemd already installed.</p></li>
+<li><p>SSH to each machine</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">sudo</span> <span class="pre">su</span> <span class="pre">-</span></code></p></li>
+<li><p><strong>Prerequisite Check:</strong> Every Linux machine on which you run the netclient must have WireGuard and systemd installed</p></li>
+<li><p>Follow the installation instructions for your operating system <a class="reference external" href="https://docs.netmaker.io/netclient.html#installation">here</a></p></li>
+</ol>
+<p>You should get output similar to the below. The netclient retrieves local settings, submits them to the server for processing, and retrieves updated settings. Then it sets the local network configuration. For more information about this process, see the <a class="reference internal" href="netclient.html"><span class="doc">client installation</span></a> documentation. If this process failed and you do not see your node in the console (see below), then reference the <a class="reference internal" href="troubleshoot.html"><span class="doc">troubleshooting</span></a> documentation.</p>
+<img alt="Output from Netclient Install" class="align-center" src="_images/nc-install-output.jpg" />
+<p>Repeat the above steps for every machine you would like to add to your network. You can re-use the same install command so long as you do not run out of uses on your access key (after which it will be invalidated and deleted).</p>
+<p>Once installed on all nodes, you can test the connection by pinging the private address of any node from any other node.</p>
+<img alt="Node Success" class="align-center" src="_images/ping-node.jpg" />
+</section>
+<section id="manage-nodes-hosts">
+<h2>Manage Nodes/Hosts<a class="headerlink" href="#manage-nodes-hosts" title="Permalink to this headline"></a></h2>
+<p>Your machines should now be visible in the control panel.</p>
+<a class="reference internal image-reference" href="_images/nodes.jpg"><img alt="Node Success" class="align-center" src="_images/nodes.jpg" style="width: 80%;" /></a>
+<p>As of v0.18.0 each node has an associated host. The host is a structure that encapsulates the node and gives it the information it needs like the name and network. The host will have features like creating a proxy, setting the hosted node as a default node, joining the hosted node to new networks without the need for another access key, setting verbosity, and changing listening ports and default interfaces. Server relays will also be handled by the host. The Hosts can be found in the Hosts tab on the UI. You should be taken to a screen like this.</p>
+<a class="reference internal image-reference" href="_images/netmakerhostpage.jpg"><img alt="Host page" class="align-center" src="_images/netmakerhostpage.jpg" style="width: 80%;" /></a>
+<p>In here you can see the host’s name, the endpoint of the server running netclient, the public key for that host, the version number, and a switch to set that host’s node as the default node. When this is switched on, that node will serve as the default node when a network is created (similar to netmaker-1 in versions before v0.18.0). Clicking on a host will bring you to the host’s details.</p>
+<a class="reference internal image-reference" href="_images/hostdetails.jpg"><img alt="details screen of the host" class="align-center" src="_images/hostdetails.jpg" style="width: 80%;" /></a>
+<p>This will give you more information like the firewall in use, MTUs, and listening port. You can also see networks associated with that host and options to edit or delete the host. If you are going to delete a Host, you need to delete the associated node first.</p>
+<img alt="Edit screen of a host" class="align-center" src="_images/hostedit.jpg" />
+<p>In the edit screen, you can make changes to the logging verbosity, listening port and proxy listening port, local range, MTU, and name. These fields will also update in the node, as the node gets this info from the host. If you want to change the endpoint, the associated node has to be static.</p>
+<p>You can view/modify/delete any node by selecting it in the NODES tab. For instance, you can change the name to something more sensible like “workstation” or “api server”. You can also modify network settings here, such as keys or the WireGuard port. These settings will be picked up by the node on its next check-in. For more information, see Advanced Configuration in the <a class="reference internal" href="usage.html"><span class="doc">Using Netmaker</span></a> docs.</p>
+<a class="reference internal image-reference" href="_images/node-details.jpg"><img alt="Node Success" class="align-center" src="_images/node-details.jpg" style="width: 80%;" /></a>
+<p>Nodes can be added/removed/modified on the network at any time. Nodes can also be added to multiple Netmaker networks. Any changes will get picked up by any nodes on a given network and will take about ~30 seconds to take effect.</p>
+<p>Netclient (host) proxy has been removed in v0.20.5.</p>
+</section>
+<section id="uninstalling-the-netclient">
+<h2>Uninstalling the netclient<a class="headerlink" href="#uninstalling-the-netclient" title="Permalink to this headline"></a></h2>
+<ol class="arabic simple">
+<li><p>To remove your nodes from a network (default here), run the following on each node: <code class="docutils literal notranslate"><span class="pre">sudo</span> <span class="pre">netclient</span> <span class="pre">leave</span> <span class="pre">default</span></code> (replacing default with the actual name of the network eg wg-net)</p></li>
+<li><p>To remove the netclient entirely from each node (after running the above step), run <code class="docutils literal notranslate"><span class="pre">sudo</span> <span class="pre">systemctl</span> <span class="pre">stop</span> <span class="pre">netclient</span> <span class="pre">&amp;&amp;</span> <span class="pre">sudo</span> <span class="pre">systemctl</span> <span class="pre">disable</span> <span class="pre">netclient</span> <span class="pre">&amp;&amp;</span> <span class="pre">sudo</span> <span class="pre">systemctl</span> <span class="pre">daemon-reload</span> <span class="pre">&amp;&amp;</span> <span class="pre">sudo</span> <span class="pre">rm</span> <span class="pre">-rf</span> <span class="pre">/etc/netclient</span> <span class="pre">/etc/systemd/system/netclient.service</span> <span class="pre">/usr/sbin/netclient</span></code></p></li>
+</ol>
+</section>
+<section id="uninstalling-netmaker">
+<h2>Uninstalling Netmaker<a class="headerlink" href="#uninstalling-netmaker" title="Permalink to this headline"></a></h2>
+<p>To uninstall Netmaker from the server, simply run <code class="docutils literal notranslate"><span class="pre">docker-compose</span> <span class="pre">down</span></code> or <code class="docutils literal notranslate"><span class="pre">docker-compose</span> <span class="pre">down</span> <span class="pre">--volumes</span></code> to remove the docker volumes for a future installation.</p>
+</section>
+</section>
+
+
+           </div>
+          </div>
+          <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
+        <a href="architecture.html" class="btn btn-neutral float-left" title="Architecture" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+        <a href="install.html" class="btn btn-neutral float-right" title="Install" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>&#169; Copyright 2024, Netmaker Inc..</p>
+  </div>
+
+  Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    provided by <a href="https://readthedocs.org">Read the Docs</a>.
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>
