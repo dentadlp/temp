@@ -1,0 +1,24 @@
+Aug 29 06:47:16 DInetGw systemd[1]: Starting netclient.service - Netclient Daemon...
+Aug 29 06:47:33 DInetGw systemd[1]: Started netclient.service - Netclient Daemon.
+Aug 29 06:47:33 DInetGw netclient[2280]: daemon called
+Aug 29 06:47:33 DInetGw netclient[2280]: [netclient] 2024-08-29 06:47:33 Starting firewall...
+Aug 29 06:47:33 DInetGw netclient[2280]: [netclient] 2024-08-29 06:47:33 iptables is supported
+Aug 29 06:47:34 DInetGw netclient[2280]: [netclient] 2024-08-29 06:47:34 adding forwarding rule
+Aug 29 06:47:34 DInetGw netclient[2280]: {"time":"2024-08-29T06:47:34.149219632Z","level":"ERROR","source":"daemon.go 220}","msg":"fail to pull config from server","error":"server config not found"}
+Aug 29 06:47:34 DInetGw netclient[2280]: [netclient] 2024-08-29 06:47:34 adding addresses to netmaker interface
+Aug 29 06:47:36 DInetGw netclient[2280]: completed pull for server dentest.clustercat.com
+Aug 29 06:47:36 DInetGw netclient[2280]: [netclient] 2024-08-29 06:47:36 adding addresses to netmaker interface
+Aug 29 06:47:36 DInetGw netclient[2280]: [netclient] 2024-08-29 06:47:36 initialized endpoint detection on port 51821
+Aug 29 06:47:36 DInetGw netclient[2280]: [netclient] 2024-08-29 06:47:36 initialized endpoint detection on port 51821
+Aug 29 06:47:39 DInetGw netclient[2280]: [netclient] 2024-08-29 06:47:39 adding addresses to netmaker interface
+Aug 29 06:47:39 DInetGw netclient[2280]: [netclient] 2024-08-29 06:47:39 adding addresses to netmaker interface
+Aug 29 06:47:39 DInetGw netclient[2280]: [netclient] 2024-08-29 06:47:39 adding addresses to netmaker interface
+Aug 29 06:48:36 DInetGw netclient[2280]: [netclient] 2024-08-29 06:48:36 endpoint has changed from <nil> to 159.89.192.38
+Aug 29 06:48:36 DInetGw netclient[2280]: [netclient] 2024-08-29 06:48:36 endpoint has changed from <nil> to 2400:6180:0:d0::fc6:2001
+Aug 29 07:00:53 DInetGw netclient[2280]: [netclient] 2024-08-29 07:00:53 checkin routine closed
+Aug 29 07:00:53 DInetGw netclient[2280]: [netclient] 2024-08-29 07:00:53 closed endpoint detection
+Aug 29 07:00:53 DInetGw netclient[2280]: [netclient] 2024-08-29 07:00:53 closed endpoint detection
+Aug 29 07:00:53 DInetGw netclient[2280]: completed pull for server dentest.clustercat.com
+Aug 29 07:00:53 DInetGw netclient[2280]: [netclient] 2024-08-29 07:00:53 adding addresses to netmaker interface
+Aug 29 07:00:53 DInetGw netclient[2280]: [netclient] 2024-08-29 07:00:53 initialized endpoint detection on port 51821
+Aug 29 07:00:53 DInetGw netclient[2280]: [netclient] 2024-08-29 07:00:53 initialized endpoint detection on port 51821
