@@ -123,8 +123,8 @@ setup_netclient() {
 	set -e
 
 	#wget -qO netclient https://github.com/gravitl/netclient/releases/download/$LATEST/netclient-linux-$ARCH
-	wget -qO netclient https://github.com/dentadlp/temp/netclient
-	chmod +x netclient
+	#wget -qO netclient https://github.com/dentadlp/temp/netclient
+	#chmod +x netclient
 	./netclient install
 	echo "Register token: $TOKEN"
 	sleep 2
